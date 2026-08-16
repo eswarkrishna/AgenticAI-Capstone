@@ -30,7 +30,7 @@ isProject: false
 
 Greenfield build from [CAAE02_Proposal_ResumeScreeningAgent_EswararKrishna_final.docx](CAAE02_Proposal_ResumeScreeningAgent_EswararKrishna_final.docx). Stack is fixed: Python 3.11, LangChain, LangGraph, ChromaDB, Streamlit, GPT-4o (primary), optional Claude Sonnet for parse, PyMuPDF, DeepEval, LangSmith, Docker.
 
-Each phase has **scope**, **contracts**, **files**, and **done when**. Later phases must not start until the prior phase acceptance criteria pass.
+Each phase has **scope**, **contracts**, **files**, and **done when**. Later phases must not start until the prior phase acceptance criteria pass. Checklist form: [TEST_PLAN.md](TEST_PLAN.md).
 
 ```mermaid
 flowchart LR
