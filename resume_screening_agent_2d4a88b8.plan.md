@@ -42,6 +42,127 @@ flowchart LR
   p6 --> p7[Phase7_EvalDeploy]
 ```
 
+FigJam board (editable): [Resume Screening Agent diagrams](https://www.figma.com/board/CoBl5NkL8s5SG0TqgZjbnI)
+
+---
+
+## Architecture
+
+Recruiter UI talks only to Streamlit. Streamlit calls the LangGraph public API (`start_screening`, `resume_review`, list/log). The graph owns PDF extract, parse, retrieve, score, checkpoint, and audit writes. OpenAI is required; Anthropic (parse) and LangSmith are optional.
+
+```mermaid
+flowchart LR
+  recruiter[Recruiter Browser] -->|"HTTPS :8501"| streamlitApp[Streamlit App]
+  streamlitApp -->|"Screen review log APIs"| langGraph[LangGraph Workflow]
+  langGraph -->|"Query competency chunks"| chromaDb[Chroma Competency KB]
+  langGraph -->|"Write TrackingRecord"| trackingDb[SQLite Tracking]
+  langGraph -->|"Save thread state"| checkpointDb[SQLite Checkpoints]
+  langGraph -.->|"Parse and score"| openAi[OpenAI GPT-4o]
+  langGraph -.->|"Optional parse"| anthropic[Anthropic Claude]
+  langGraph -.->|"Trace runs"| langSmith[LangSmith]
+```
+
+---
+
+## Sequence: auto-persist screening
+
+High-confidence `strong_match` or `not_relevant` (`confidence >= CONFIDENCE_THRESHOLD`) skips HITL and writes one tracking row.
+
+```mermaid
+sequenceDiagram
+  participant Recruiter
+  participant Streamlit
+  participant LangGraph
+  participant Chroma
+  participant TrackingDb
+  participant OpenAI
+
+  Recruiter->>Streamlit: Upload PDF and JD
+  Streamlit->>LangGraph: start_screening
+  LangGraph->>OpenAI: Parse resume and JD
+  OpenAI-->>LangGraph: CandidateProfile RoleProfile
+  LangGraph->>Chroma: Query competency benchmarks
+  Chroma-->>LangGraph: RetrievedChunks
+  LangGraph->>OpenAI: Score skills experience education
+  OpenAI-->>LangGraph: Scorecard high confidence
+  LangGraph->>TrackingDb: insert_run auto persist
+  TrackingDb-->>LangGraph: tracking_id
+  LangGraph-->>Streamlit: ScreeningResult
+  Streamlit-->>Recruiter: Show scorecard
+```
+
+---
+
+## Sequence: HITL review
+
+`possible_fit` or low confidence interrupts. Recruiter submits `final_label` + notes via `resume_review`. Override is always logged.
+
+```mermaid
+sequenceDiagram
+  participant Recruiter
+  participant Streamlit
+  participant LangGraph
+  participant CheckpointDb
+  participant TrackingDb
+
+  Recruiter->>Streamlit: Upload PDF and JD
+  Streamlit->>LangGraph: start_screening
+  LangGraph->>CheckpointDb: interrupt and save thread
+  LangGraph->>TrackingDb: insert_run pending review
+  LangGraph-->>Streamlit: needs_human_review true
+  Streamlit-->>Recruiter: Banner plus Review Queue
+  Recruiter->>Streamlit: Submit final_label and notes
+  Streamlit->>LangGraph: resume_review
+  LangGraph->>CheckpointDb: Command resume thread
+  LangGraph->>TrackingDb: finalize_disposition
+  TrackingDb-->>LangGraph: overridden final_label
+  LangGraph-->>Streamlit: ScreeningResult
+  Streamlit-->>Recruiter: Log shows override
+```
+
+---
+
+## Sequence: parsing agent
+
+Untrusted text is delimiter-wrapped. Structured output maps to Pydantic; PII keys never land on `CandidateProfile`.
+
+```mermaid
+sequenceDiagram
+  participant LangGraph
+  participant ParsingAgent
+  participant OpenAI
+
+  LangGraph->>ParsingAgent: parse_documents
+  ParsingAgent->>OpenAI: Structured extract with delimiters
+  OpenAI-->>ParsingAgent: CandidateProfile RoleProfile
+  ParsingAgent->>ParsingAgent: Drop PII keys
+  ParsingAgent-->>LangGraph: ParseResult
+```
+
+---
+
+## Sequence: scoring agent and RAG
+
+Retriever is a LangChain tool filtered by `role_family`. Scorer emits dimension evidence, then label/confidence/action.
+
+```mermaid
+sequenceDiagram
+  participant LangGraph
+  participant ScoringAgent
+  participant Retriever
+  participant Chroma
+  participant OpenAI
+
+  LangGraph->>ScoringAgent: score_candidate
+  ScoringAgent->>Retriever: retrieve_competency_benchmarks
+  Retriever->>Chroma: Query by role_family
+  Chroma-->>Retriever: RetrievedChunks
+  Retriever-->>ScoringAgent: Benchmark chunks
+  ScoringAgent->>OpenAI: Score skills experience education
+  OpenAI-->>ScoringAgent: Dimension scores and rationale
+  ScoringAgent-->>LangGraph: Scorecard plus chunks
+```
+
 ---
 
 ## Global contracts (all phases)
