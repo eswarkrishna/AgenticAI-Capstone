@@ -4,7 +4,7 @@ overview: "Phase-by-phase implementation spec for the AI-Powered Resume Screenin
 todos:
   - id: phase-1-foundation
     content: "Phase 1 — Foundation: scaffold, Pydantic contracts, config, PDF extract, empty Streamlit shell"
-    status: pending
+    status: completed
   - id: phase-2-data-kb
     content: "Phase 2 — Data & KB: 30 labelled resume-JD pairs, competency markdown, Chroma ingest"
     status: pending

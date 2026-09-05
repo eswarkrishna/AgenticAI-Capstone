@@ -25,11 +25,11 @@ No Greenhouse/Lever/Workday tests, no real candidate PII, no production auth, no
 
 | ID | Type | Check | Pass |
 |---|---|---|---|
-| P1-01 | Unit | `pytest` schema validation rejects PII-shaped extra fields (`extra=forbid`) | [ ] |
-| P1-02 | Unit | Score outside 1–10 is rejected | [ ] |
-| P1-03 | Unit | PDF extractor returns non-empty text from a fixture PDF | [ ] |
-| P1-04 | Manual | `streamlit run app/streamlit_app.py` shows Screen / Review / Log pages | [ ] |
-| P1-05 | Doc | `.env.example` documents every config variable | [ ] |
+| P1-01 | Unit | `pytest` schema validation rejects PII-shaped extra fields (`extra=forbid`) | [x] |
+| P1-02 | Unit | Score outside 1–10 is rejected | [x] |
+| P1-03 | Unit | PDF extractor returns non-empty text from a fixture PDF | [x] |
+| P1-04 | Manual | `streamlit run app/streamlit_app.py` shows Screen / Review / Log pages | [x] |
+| P1-05 | Doc | `.env.example` documents every config variable | [x] |
 
 **Command:** `pytest tests/test_schemas.py tests/test_pdf.py`
 
