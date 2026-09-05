@@ -4,7 +4,7 @@ Source of truth: [resume_screening_agent_2d4a88b8.plan.md](resume_screening_agen
 
 Rules: later phases must not start until the prior phase gate passes. Check a task only when its files exist and its linked TEST_PLAN IDs pass.
 
-**Status:** Phases 1–3 (T1.1–T3.5 / P1–P3) are done. Next work is T4.1.
+**Status:** Phases 1–4 (T1.1–T4.5 / P1–P4) are done. Next work is T5.1.
 
 ---
 
@@ -71,13 +71,13 @@ Depends on: Phase 3 gate. Label accuracy is **not** gated here (that is Phase 7)
 
 | ID | Task | Files | Gate | Status |
 |---|---|---|---|---|
-| T4.1 | Retriever `retrieve_competency_benchmarks(role_family, query, k=5)` filtered by `role_family`; expose as a LangChain tool | `src/resume_screener/rag/retriever.py` | P4-01 | [ ] |
-| T4.2 | `score_candidate(candidate, role, resume_text) -> (Scorecard, list[RetrievedChunk])`: retrieve, then score skills → experience → education with resume evidence | `src/resume_screener/agents/scoring_agent.py` | P4-02 | [ ] |
-| T4.3 | Enforce label decision rules (Strong / Possible / Not Relevant) and never emit Strong Match when must-haves are absent | same | P4-02 | [ ] |
-| T4.4 | Thin evidence → lower confidence + `recruiter_questions`; custom validator: evidence required when a dimension score ≥ 8 | `src/resume_screener/schemas.py`, scoring agent | P4-03 | [ ] |
-| T4.5 | Phase 4 tests: family-filtered retrieval; one Strong / Possible / Not Relevant fixture scorecard | `tests/test_retriever.py`, `tests/test_scoring_agent.py` | P4-01–P4-03 | [ ] |
+| T4.1 | Retriever `retrieve_competency_benchmarks(role_family, query, k=5)` filtered by `role_family`; expose as a LangChain tool | `src/resume_screener/rag/retriever.py` | P4-01 | [x] |
+| T4.2 | `score_candidate(candidate, role, resume_text) -> (Scorecard, list[RetrievedChunk])`: retrieve, then score skills → experience → education with resume evidence | `src/resume_screener/agents/scoring_agent.py` | P4-02 | [x] |
+| T4.3 | Enforce label decision rules (Strong / Possible / Not Relevant) and never emit Strong Match when must-haves are absent | same | P4-02 | [x] |
+| T4.4 | Thin evidence → lower confidence + `recruiter_questions`; custom validator: evidence required when a dimension score ≥ 8 | `src/resume_screener/schemas.py`, scoring agent | P4-03 | [x] |
+| T4.5 | Phase 4 tests: family-filtered retrieval; one Strong / Possible / Not Relevant fixture scorecard | `tests/test_retriever.py`, `tests/test_scoring_agent.py` | P4-01–P4-03 | [x] |
 
-**Phase gate:** retriever returns same-family chunks; three fixture scorecards validate; empty evidence on a high score fails validation.
+**Phase gate:** retriever returns same-family chunks; three fixture scorecards validate; empty evidence on a high score fails validation. **Passed.**
 
 ---
 

@@ -14,13 +14,17 @@ cp .env.example .env
 OpenAI is required from Phase 3 onward for live LLM calls. Unit tests mock the model.
 
 ```bash
-pytest tests/test_schemas.py tests/test_pdf.py tests/test_eval_cases.py tests/test_ingest.py tests/test_parsing_agent.py
+pytest tests/test_schemas.py tests/test_pdf.py tests/test_eval_cases.py tests/test_ingest.py tests/test_parsing_agent.py tests/test_retriever.py tests/test_scoring_agent.py
 streamlit run app/streamlit_app.py
 ```
 
 ## Parsing (Phase 3)
 
 `parse_documents(resume_text, jd_text)` wraps untrusted text in `<<<RESUME>>>` / `<<<JOB_DESCRIPTION>>>` delimiters, calls the parse model with structured Pydantic output, drops PII, and retries once on `ValidationError`. Tests inject a fake LLM; a live run needs `OPENAI_API_KEY`.
+
+## Scoring and RAG (Phase 4)
+
+`retrieve_competency_benchmarks(role_family, query)` returns same-family Chroma chunks and is also a LangChain tool. `score_candidate(candidate, role, resume_text)` retrieves benchmarks, scores skills → experience → education with resume-grounded evidence, then applies label rules (never Strong Match when must-haves are absent).
 
 ## Regenerating eval PDFs
 
