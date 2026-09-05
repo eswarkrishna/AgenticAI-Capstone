@@ -1,6 +1,6 @@
 # Resume Screening Agent — Test Plan
 
-Source of truth: [resume_screening_agent_2d4a88b8.plan.md](resume_screening_agent_2d4a88b8.plan.md). Later phases must not start until the prior phase gate passes.
+Source of truth: [resume_screening_agent_2d4a88b8.plan.md](resume_screening_agent_2d4a88b8.plan.md). Implementation tasks: [TASKS.md](TASKS.md). Later phases must not start until the prior phase gate passes.
 
 ## Target metrics (Phase 7)
 

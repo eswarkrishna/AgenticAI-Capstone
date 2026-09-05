@@ -10,18 +10,119 @@ todos:
     status: completed
   - id: phase-3-parsing
     content: "Phase 3 — Parsing Agent: LLM JSON extraction, PII strip, schema retry, injection wrap"
+  - id: t1-1-scaffold
+    content: "T1.1 Scaffold package, requirements, src/resume_screener"
     status: pending
-  - id: phase-4-scoring
-    content: "Phase 4 — Scoring + RAG: retriever tool, dimension rubric, scorecard + rationale"
+  - id: t1-2-schemas
+    content: "T1.2 Pydantic contracts (enums, profiles, scorecard, extra=forbid)"
     status: pending
-  - id: phase-5-graph
-    content: "Phase 5 — LangGraph + HITL + persist: StateGraph, confidence router, interrupt, SQLite audit"
+  - id: t1-3-config
+    content: "T1.3 Config + .env.example"
     status: pending
-  - id: phase-6-ui
-    content: "Phase 6 — Streamlit: Screen, Review Queue, Tracking Log pages"
+  - id: t1-4-pdf
+    content: "T1.4 PyMuPDF extract_resume_text + fixture PDF"
     status: pending
-  - id: phase-7-eval-deploy
-    content: "Phase 7 — Eval & deploy: DeepEval harness, Docker/compose, README demo"
+  - id: t1-5-streamlit-stub
+    content: "T1.5 Streamlit stub pages: Screen / Review / Log"
+    status: pending
+  - id: t1-6-phase1-tests
+    content: "T1.6 Phase 1 tests (P1-01–P1-05)"
+    status: pending
+  - id: t2-1-labels
+    content: "T2.1 labels.json with 30 EvalCase objects"
+    status: pending
+  - id: t2-2-pairs
+    content: "T2.2 Author 30 resume+JD markdown pairs (10/10/10 family and label)"
+    status: pending
+  - id: t2-3-hard-cases
+    content: "T2.3 At least 6 hard cases documented in notes"
+    status: pending
+  - id: t2-4-pdfs
+    content: "T2.4 Render resumes markdown to PDF"
+    status: pending
+  - id: t2-5-kb
+    content: "T2.5 Competency KB 30–50 markdown files"
+    status: pending
+  - id: t2-6-ingest
+    content: "T2.6 Chroma ingest CLI competency_benchmarks"
+    status: pending
+  - id: t2-7-phase2-tests
+    content: "T2.7 Phase 2 tests + README ingest/PDF snippet"
+    status: pending
+  - id: t3-1-parse
+    content: "T3.1 parse_documents structured LLM output"
+    status: pending
+  - id: t3-2-injection
+    content: "T3.2 Delimiter wrap + injection guard"
+    status: pending
+  - id: t3-3-pii
+    content: "T3.3 Strip PII keys from CandidateProfile"
+    status: pending
+  - id: t3-4-retry
+    content: "T3.4 Schema ValidationError retry once"
+    status: pending
+  - id: t3-5-phase3-tests
+    content: "T3.5 Phase 3 tests (P3-01–P3-04)"
+    status: pending
+  - id: t4-1-retriever
+    content: "T4.1 Role-family-filtered retriever LangChain tool"
+    status: pending
+  - id: t4-2-scorer
+    content: "T4.2 score_candidate skills/experience/education + evidence"
+    status: pending
+  - id: t4-3-label-rules
+    content: "T4.3 Label decision rules; never Strong Match without must-haves"
+    status: pending
+  - id: t4-4-evidence
+    content: "T4.4 Evidence required when dimension score >= 8; thin evidence lowers confidence"
+    status: pending
+  - id: t4-5-phase4-tests
+    content: "T4.5 Phase 4 tests (P4-01–P4-03)"
+    status: pending
+  - id: t5-1-state
+    content: "T5.1 LangGraph state schema"
+    status: pending
+  - id: t5-2-graph
+    content: "T5.2 StateGraph ingest-parse-retrieve-score-validate-persist/HITL + SqliteSaver"
+    status: pending
+  - id: t5-3-routing
+    content: "T5.3 Confidence router (auto-persist vs interrupt at 0.7)"
+    status: pending
+  - id: t5-4-tracking
+    content: "T5.4 SQLite tracking API + overrides.jsonl"
+    status: pending
+  - id: t5-5-public-api
+    content: "T5.5 start_screening and resume_review public API"
+    status: pending
+  - id: t5-6-errors
+    content: "T5.6 Failed parse/score still writes an audit row"
+    status: pending
+  - id: t5-7-phase5-tests
+    content: "T5.7 Phase 5 tests (P5-01–P5-04)"
+    status: pending
+  - id: t6-1-screen
+    content: "T6.1 Screen page: upload, scorecard, no candidate name"
+    status: pending
+  - id: t6-2-review
+    content: "T6.2 Review Queue: pending interrupts, override submit"
+    status: pending
+  - id: t6-3-log
+    content: "T6.3 Tracking Log: filters + CSV export"
+    status: pending
+  - id: t6-4-checkpoint
+    content: "T6.4 Refresh-safe in-flight review (P6-04)"
+    status: pending
+  - id: t7-1-eval
+    content: "T7.1 Eval harness over 30 pairs + report.json"
+    status: pending
+  - id: t7-2-tune
+    content: "T7.2 Tune to accuracy >=85%, FPR <=5%, p95 <90s"
+    status: pending
+  - id: t7-3-docker
+    content: "T7.3 Dockerfile + compose Streamlit :8501"
+    status: pending
+  - id: t7-4-readme
+    content: "T7.4 README demo sufficient with only an OpenAI key"
     status: pending
 isProject: false
 ---
@@ -30,7 +131,7 @@ isProject: false
 
 Greenfield build from [CAAE02_Proposal_ResumeScreeningAgent_EswararKrishna_final.docx](CAAE02_Proposal_ResumeScreeningAgent_EswararKrishna_final.docx). Stack is fixed: Python 3.11, LangChain, LangGraph, ChromaDB, Streamlit, GPT-4o (primary), optional Claude Sonnet for parse, PyMuPDF, DeepEval, LangSmith, Docker.
 
-Each phase has **scope**, **contracts**, **files**, and **done when**. Later phases must not start until the prior phase acceptance criteria pass. Checklist form: [TEST_PLAN.md](TEST_PLAN.md).
+Each phase has **scope**, **contracts**, **files**, and **done when**. Later phases must not start until the prior phase acceptance criteria pass. Executable tasks: [TASKS.md](TASKS.md). Checklist form: [TEST_PLAN.md](TEST_PLAN.md).
 
 ```mermaid
 flowchart LR
