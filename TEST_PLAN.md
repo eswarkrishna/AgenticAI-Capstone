@@ -55,10 +55,10 @@ No Greenhouse/Lever/Workday tests, no real candidate PII, no production auth, no
 
 | ID | Type | Check | Pass |
 |---|---|---|---|
-| P3-01 | Integration | `parse_documents` on 3 fixture pairs (one per `role_family`) returns valid `CandidateProfile` + `RoleProfile` | [ ] |
-| P3-02 | Unit | `CandidateProfile` JSON has no PII keys (name, email, phone, gender, age, nationality, photo, address) | [ ] |
-| P3-03 | Unit | Failed schema then successful retry is covered | [ ] |
-| P3-04 | Unit | Injection string inside resume delimiters does not appear in profile fields as instructions | [ ] |
+| P3-01 | Integration | `parse_documents` on 3 fixture pairs (one per `role_family`) returns valid `CandidateProfile` + `RoleProfile` | [x] |
+| P3-02 | Unit | `CandidateProfile` JSON has no PII keys (name, email, phone, gender, age, nationality, photo, address) | [x] |
+| P3-03 | Unit | Failed schema then successful retry is covered | [x] |
+| P3-04 | Unit | Injection string inside resume delimiters does not appear in profile fields as instructions | [x] |
 
 ---
 
