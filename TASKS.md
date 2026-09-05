@@ -4,6 +4,8 @@ Source of truth: [resume_screening_agent_2d4a88b8.plan.md](resume_screening_agen
 
 Rules: later phases must not start until the prior phase gate passes. Check a task only when its files exist and its linked TEST_PLAN IDs pass.
 
+**Status on `main`:** Phase 1 (T1.1–T1.6 / P1-01–P1-05) and Phase 2 (T2.1–T2.7 / P2-01–P2-07) are done. Next work is T3.1.
+
 ---
 
 ## Phase 1 — Foundation and contracts
@@ -12,14 +14,14 @@ Goal: runnable empty app with typed contracts and PDF text extraction. No LLM ca
 
 | ID | Task | Files | Gate | Status |
 |---|---|---|---|---|
-| T1.1 | Scaffold package: `pyproject.toml` or `PYTHONPATH=src`, `requirements.txt`, `src/resume_screener/__init__.py` | `pyproject.toml`, `requirements.txt`, `src/resume_screener/__init__.py` | — | [ ] |
-| T1.2 | Pydantic contracts: enums (`MatchLabel`, `RoleFamily`, `RecommendedAction`), `CandidateProfile` (`extra=forbid`, no PII), `RoleProfile`, `DimensionScore`, `Scorecard`, `TrackingRecord`, `EvalCase` | `src/resume_screener/schemas.py` | P1-01, P1-02 | [ ] |
-| T1.3 | Config + env template: dotenv load; OpenAI required; Anthropic/LangSmith optional; defaults for models, `confidence_threshold=0.7`, Chroma, SQLite, `top_k=5` | `src/resume_screener/config.py`, `.env.example` | P1-05 | [ ] |
-| T1.4 | PDF extractor `extract_resume_text(path) -> str` via PyMuPDF plus a fixture PDF | `src/resume_screener/parsing/pdf.py`, fixture under `tests/` or `data/` | P1-03 | [ ] |
-| T1.5 | Streamlit stub with three named pages: Screen / Review / Log | `app/streamlit_app.py` | P1-04 | [ ] |
-| T1.6 | Phase 1 tests | `tests/test_schemas.py`, `tests/test_pdf.py` | P1-01–P1-03 | [ ] |
+| T1.1 | Scaffold package: `pyproject.toml` or `PYTHONPATH=src`, `requirements.txt`, `src/resume_screener/__init__.py` | `pyproject.toml`, `requirements.txt`, `src/resume_screener/__init__.py` | — | [x] |
+| T1.2 | Pydantic contracts: enums (`MatchLabel`, `RoleFamily`, `RecommendedAction`), `CandidateProfile` (`extra=forbid`, no PII), `RoleProfile`, `DimensionScore`, `Scorecard`, `TrackingRecord`, `EvalCase` | `src/resume_screener/schemas.py` | P1-01, P1-02 | [x] |
+| T1.3 | Config + env template: dotenv load; OpenAI required; Anthropic/LangSmith optional; defaults for models, `confidence_threshold=0.7`, Chroma, SQLite, `top_k=5` | `src/resume_screener/config.py`, `.env.example` | P1-05 | [x] |
+| T1.4 | PDF extractor `extract_resume_text(path) -> str` via PyMuPDF plus a fixture PDF | `src/resume_screener/parsing/pdf.py`, fixture under `tests/` or `data/` | P1-03 | [x] |
+| T1.5 | Streamlit stub with three named pages: Screen / Review / Log | `app/streamlit_app.py` | P1-04 | [x] |
+| T1.6 | Phase 1 tests | `tests/test_schemas.py`, `tests/test_pdf.py` | P1-01–P1-03 | [x] |
 
-**Phase gate:** `pytest tests/test_schemas.py tests/test_pdf.py`; Streamlit shows three pages; `.env.example` lists every config field.
+**Phase gate:** `pytest tests/test_schemas.py tests/test_pdf.py`; Streamlit shows three pages; `.env.example` lists every config field. **Passed.**
 
 ---
 
@@ -31,15 +33,15 @@ Depends on: Phase 1 gate.
 
 | ID | Task | Files | Gate | Status |
 |---|---|---|---|---|
-| T2.1 | Eval set index: 30 `EvalCase` objects in `labels.json` (id, role_family, label, jd_path, resume_pdf, notes) | `data/eval/labels.json` | P2-01 | [ ] |
-| T2.2 | Author 30 resume `.md` + 30 JD `.md` with balance 10/10/10 role_family and 10/10/10 labels (cross-cut) | `data/eval/resumes/*.md`, `data/eval/jds/*.md` | P2-02, P2-03 | [ ] |
-| T2.3 | Include ≥6 hard cases: synonym skills, keyword-stuffed weak resume, career-switcher, overqualified mismatch, missing degree + strong experience, uncommon JD tools | same as T2.2; call out in `notes` | P2-04 | [ ] |
-| T2.4 | Render resume markdown to PDF (reportlab/fpdf2) so PyMuPDF is on the real path | `data/eval/resumes/*.pdf`, render script if needed | P2-01 | [ ] |
-| T2.5 | Competency KB: 30–50 short markdown files covering clusters used by the 30 JDs (heading schema: skills, experience band, education, related titles + `role_family` metadata) | `data/competency_kb/*.md` | — | [ ] |
-| T2.6 | Chroma ingest: chunk by heading, embed, persist collection `competency_benchmarks` with metadata `{role_family, source, title}` | `src/resume_screener/rag/ingest.py` | P2-05, P2-06 | [ ] |
-| T2.7 | Phase 2 tests + README snippet for regenerating PDFs and the index | `tests/test_eval_cases.py`, `tests/test_ingest.py`, `README.md` | P2-01–P2-07 | [ ] |
+| T2.1 | Eval set index: 30 `EvalCase` objects in `labels.json` (id, role_family, label, jd_path, resume_pdf, notes) | `data/eval/labels.json` | P2-01 | [x] |
+| T2.2 | Author 30 resume `.md` + 30 JD `.md` with balance 10/10/10 role_family and 10/10/10 labels (cross-cut) | `data/eval/resumes/*.md`, `data/eval/jds/*.md` | P2-02, P2-03 | [x] |
+| T2.3 | Include ≥6 hard cases: synonym skills, keyword-stuffed weak resume, career-switcher, overqualified mismatch, missing degree + strong experience, uncommon JD tools | same as T2.2; call out in `notes` | P2-04 | [x] |
+| T2.4 | Render resume markdown to PDF (reportlab/fpdf2) so PyMuPDF is on the real path | `data/eval/resumes/*.pdf`, render script if needed | P2-01 | [x] |
+| T2.5 | Competency KB: 30–50 short markdown files covering clusters used by the 30 JDs (heading schema: skills, experience band, education, related titles + `role_family` metadata) | `data/competency_kb/*.md` | — | [x] |
+| T2.6 | Chroma ingest: chunk by heading, embed, persist collection `competency_benchmarks` with metadata `{role_family, source, title}` | `src/resume_screener/rag/ingest.py` | P2-05, P2-06 | [x] |
+| T2.7 | Phase 2 tests + README snippet for regenerating PDFs and the index | `tests/test_eval_cases.py`, `tests/test_ingest.py`, `README.md` | P2-01–P2-07 | [x] |
 
-**Phase gate:** 30 pairs validate; `python -m resume_screener.rag.ingest` creates `data/chroma/`; query “backend software engineer” returns ≥1 chunk.
+**Phase gate:** 30 pairs validate; `python -m resume_screener.rag.ingest` creates `data/chroma/`; query “backend software engineer” returns ≥1 chunk. **Passed.**
 
 ---
 

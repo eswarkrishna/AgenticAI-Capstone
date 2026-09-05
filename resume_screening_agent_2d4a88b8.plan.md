@@ -2,53 +2,45 @@
 name: Resume Screening Agent
 overview: "Phase-by-phase implementation spec for the AI-Powered Resume Screening & Candidate Triage Agent: contracts, interfaces, and acceptance criteria for each deliverable, from scaffold through eval and Docker demo."
 todos:
-  - id: phase-1-foundation
-    content: "Phase 1 — Foundation: scaffold, Pydantic contracts, config, PDF extract, empty Streamlit shell"
-    status: completed
-  - id: phase-2-data-kb
-    content: "Phase 2 — Data & KB: 30 labelled resume-JD pairs, competency markdown, Chroma ingest"
-    status: completed
-  - id: phase-3-parsing
-    content: "Phase 3 — Parsing Agent: LLM JSON extraction, PII strip, schema retry, injection wrap"
   - id: t1-1-scaffold
     content: "T1.1 Scaffold package, requirements, src/resume_screener"
-    status: pending
+    status: completed
   - id: t1-2-schemas
     content: "T1.2 Pydantic contracts (enums, profiles, scorecard, extra=forbid)"
-    status: pending
+    status: completed
   - id: t1-3-config
     content: "T1.3 Config + .env.example"
-    status: pending
+    status: completed
   - id: t1-4-pdf
     content: "T1.4 PyMuPDF extract_resume_text + fixture PDF"
-    status: pending
+    status: completed
   - id: t1-5-streamlit-stub
     content: "T1.5 Streamlit stub pages: Screen / Review / Log"
-    status: pending
+    status: completed
   - id: t1-6-phase1-tests
     content: "T1.6 Phase 1 tests (P1-01–P1-05)"
-    status: pending
+    status: completed
   - id: t2-1-labels
     content: "T2.1 labels.json with 30 EvalCase objects"
-    status: pending
+    status: completed
   - id: t2-2-pairs
     content: "T2.2 Author 30 resume+JD markdown pairs (10/10/10 family and label)"
-    status: pending
+    status: completed
   - id: t2-3-hard-cases
     content: "T2.3 At least 6 hard cases documented in notes"
-    status: pending
+    status: completed
   - id: t2-4-pdfs
     content: "T2.4 Render resumes markdown to PDF"
-    status: pending
+    status: completed
   - id: t2-5-kb
     content: "T2.5 Competency KB 30–50 markdown files"
-    status: pending
+    status: completed
   - id: t2-6-ingest
     content: "T2.6 Chroma ingest CLI competency_benchmarks"
-    status: pending
+    status: completed
   - id: t2-7-phase2-tests
     content: "T2.7 Phase 2 tests + README ingest/PDF snippet"
-    status: pending
+    status: completed
   - id: t3-1-parse
     content: "T3.1 parse_documents structured LLM output"
     status: pending
