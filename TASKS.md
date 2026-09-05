@@ -4,7 +4,7 @@ Source of truth: [resume_screening_agent_2d4a88b8.plan.md](resume_screening_agen
 
 Rules: later phases must not start until the prior phase gate passes. Check a task only when its files exist and its linked TEST_PLAN IDs pass.
 
-**Status:** Phases 1–4 (T1.1–T4.5 / P1–P4) are done. Next work is T5.1.
+**Status on `main`:** Phase 1 (T1.1–T1.6 / P1-01–P1-05) and Phase 2 (T2.1–T2.7 / P2-01–P2-07) are done. Next work is T3.1.
 
 ---
 

@@ -2,15 +2,6 @@
 name: Resume Screening Agent
 overview: "Phase-by-phase implementation spec for the AI-Powered Resume Screening & Candidate Triage Agent: contracts, interfaces, and acceptance criteria for each deliverable, from scaffold through eval and Docker demo."
 todos:
-  - id: phase-1-foundation
-    content: "Phase 1 — Foundation: scaffold, Pydantic contracts, config, PDF extract, empty Streamlit shell"
-    status: completed
-  - id: phase-2-data-kb
-    content: "Phase 2 — Data & KB: 30 labelled resume-JD pairs, competency markdown, Chroma ingest"
-    status: completed
-  - id: phase-3-parsing
-    content: "Phase 3 — Parsing Agent: LLM JSON extraction, PII strip, schema retry, injection wrap"
-    status: completed
   - id: t1-1-scaffold
     content: "T1.1 Scaffold package, requirements, src/resume_screener"
     status: completed
