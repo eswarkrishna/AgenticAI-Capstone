@@ -16,6 +16,8 @@ dependencies = [
     "chromadb>=0.5",
     "fpdf2>=2.8",
     "openai>=1.40",
+    "langchain-core>=0.3",
+    "langchain-openai>=0.2",
 ]
 
 [project.optional-dependencies]
