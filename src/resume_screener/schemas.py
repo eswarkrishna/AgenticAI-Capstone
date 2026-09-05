@@ -167,3 +167,15 @@ class ParseResult(BaseModel):
     candidate: CandidateProfile
     role: RoleProfile
     raw_pii_redacted: bool = False
+
+
+class RetrievedChunk(BaseModel):
+    """One competency-benchmark hit from the retriever."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    id: str
+    title: str
+    text: str
+    role_family: RoleFamily
+    score: float = Field(ge=0.0)

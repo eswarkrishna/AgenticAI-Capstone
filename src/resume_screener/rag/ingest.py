@@ -149,6 +149,7 @@ def query_competency(
     k: int = 5,
     chroma_dir: Path | None = None,
     settings: Settings | None = None,
+    role_family: str | None = None,
 ) -> list[dict]:
     settings = settings or Settings()
     chroma_dir = Path(chroma_dir or settings.chroma_dir)
@@ -156,9 +157,15 @@ def query_competency(
     client = _client(chroma_dir)
     collection = client.get_collection(name=COLLECTION_NAME)
     query_embedding = _embed_batched(embed_fn, [query])[0]
-    result = collection.query(
-        query_embeddings=[query_embedding], n_results=max(k, 1)
-    )
+    available = max(collection.count(), 1)
+    fetch = min(max(k, 1) * (3 if role_family else 1), available)
+    kwargs: dict = {
+        "query_embeddings": [query_embedding],
+        "n_results": fetch,
+    }
+    if role_family:
+        kwargs["where"] = {"role_family": role_family}
+    result = collection.query(**kwargs)
     hits: list[dict] = []
     ids = (result.get("ids") or [[]])[0]
     docs = (result.get("documents") or [[]])[0]
@@ -176,7 +183,9 @@ def query_competency(
                 "distance": dists[i] if i < len(dists) else None,
             }
         )
-    return hits
+    if role_family:
+        hits = [h for h in hits if h.get("role_family") == role_family]
+    return hits[:k]
 
 
 def main(argv: list[str] | None = None) -> int:

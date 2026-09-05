@@ -68,9 +68,9 @@ Phase 4 proves wiring. Label accuracy is **not** gated here; that is Phase 7.
 
 | ID | Type | Check | Pass |
 |---|---|---|---|
-| P4-01 | Unit | Retriever returns same-`role_family` chunks for a known query | [ ] |
-| P4-02 | Integration | `score_candidate` returns a valid `Scorecard` for one Strong, one Possible, one Not Relevant fixture | [ ] |
-| P4-03 | Unit | `Scorecard` validation fails if evidence is empty when a dimension score >= 8 | [ ] |
+| P4-01 | Unit | Retriever returns same-`role_family` chunks for a known query | [x] |
+| P4-02 | Integration | `score_candidate` returns a valid `Scorecard` for one Strong, one Possible, one Not Relevant fixture | [x] |
+| P4-03 | Unit | `Scorecard` validation fails if evidence is empty when a dimension score >= 8 | [x] |
 
 ---
 

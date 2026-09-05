@@ -67,19 +67,19 @@ todos:
     status: completed
   - id: t4-1-retriever
     content: "T4.1 Role-family-filtered retriever LangChain tool"
-    status: pending
+    status: completed
   - id: t4-2-scorer
     content: "T4.2 score_candidate skills/experience/education + evidence"
-    status: pending
+    status: completed
   - id: t4-3-label-rules
     content: "T4.3 Label decision rules; never Strong Match without must-haves"
-    status: pending
+    status: completed
   - id: t4-4-evidence
     content: "T4.4 Evidence required when dimension score >= 8; thin evidence lowers confidence"
-    status: pending
+    status: completed
   - id: t4-5-phase4-tests
     content: "T4.5 Phase 4 tests (P4-01–P4-03)"
-    status: pending
+    status: completed
   - id: t5-1-state
     content: "T5.1 LangGraph state schema"
     status: pending
