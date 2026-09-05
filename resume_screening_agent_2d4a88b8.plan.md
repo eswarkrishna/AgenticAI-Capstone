@@ -43,34 +43,34 @@ todos:
     status: completed
   - id: t3-1-parse
     content: "T3.1 parse_documents structured LLM output"
-    status: pending
+    status: completed
   - id: t3-2-injection
     content: "T3.2 Delimiter wrap + injection guard"
-    status: pending
+    status: completed
   - id: t3-3-pii
     content: "T3.3 Strip PII keys from CandidateProfile"
-    status: pending
+    status: completed
   - id: t3-4-retry
     content: "T3.4 Schema ValidationError retry once"
-    status: pending
+    status: completed
   - id: t3-5-phase3-tests
     content: "T3.5 Phase 3 tests (P3-01–P3-04)"
-    status: pending
+    status: completed
   - id: t4-1-retriever
     content: "T4.1 Role-family-filtered retriever LangChain tool"
-    status: pending
+    status: completed
   - id: t4-2-scorer
     content: "T4.2 score_candidate skills/experience/education + evidence"
-    status: pending
+    status: completed
   - id: t4-3-label-rules
     content: "T4.3 Label decision rules; never Strong Match without must-haves"
-    status: pending
+    status: completed
   - id: t4-4-evidence
     content: "T4.4 Evidence required when dimension score >= 8; thin evidence lowers confidence"
-    status: pending
+    status: completed
   - id: t4-5-phase4-tests
     content: "T4.5 Phase 4 tests (P4-01–P4-03)"
-    status: pending
+    status: completed
   - id: t5-1-state
     content: "T5.1 LangGraph state schema"
     status: pending

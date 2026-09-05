@@ -55,10 +55,10 @@ No Greenhouse/Lever/Workday tests, no real candidate PII, no production auth, no
 
 | ID | Type | Check | Pass |
 |---|---|---|---|
-| P3-01 | Integration | `parse_documents` on 3 fixture pairs (one per `role_family`) returns valid `CandidateProfile` + `RoleProfile` | [ ] |
-| P3-02 | Unit | `CandidateProfile` JSON has no PII keys (name, email, phone, gender, age, nationality, photo, address) | [ ] |
-| P3-03 | Unit | Failed schema then successful retry is covered | [ ] |
-| P3-04 | Unit | Injection string inside resume delimiters does not appear in profile fields as instructions | [ ] |
+| P3-01 | Integration | `parse_documents` on 3 fixture pairs (one per `role_family`) returns valid `CandidateProfile` + `RoleProfile` | [x] |
+| P3-02 | Unit | `CandidateProfile` JSON has no PII keys (name, email, phone, gender, age, nationality, photo, address) | [x] |
+| P3-03 | Unit | Failed schema then successful retry is covered | [x] |
+| P3-04 | Unit | Injection string inside resume delimiters does not appear in profile fields as instructions | [x] |
 
 ---
 
@@ -68,9 +68,9 @@ Phase 4 proves wiring. Label accuracy is **not** gated here; that is Phase 7.
 
 | ID | Type | Check | Pass |
 |---|---|---|---|
-| P4-01 | Unit | Retriever returns same-`role_family` chunks for a known query | [ ] |
-| P4-02 | Integration | `score_candidate` returns a valid `Scorecard` for one Strong, one Possible, one Not Relevant fixture | [ ] |
-| P4-03 | Unit | `Scorecard` validation fails if evidence is empty when a dimension score >= 8 | [ ] |
+| P4-01 | Unit | Retriever returns same-`role_family` chunks for a known query | [x] |
+| P4-02 | Integration | `score_candidate` returns a valid `Scorecard` for one Strong, one Possible, one Not Relevant fixture | [x] |
+| P4-03 | Unit | `Scorecard` validation fails if evidence is empty when a dimension score >= 8 | [x] |
 
 ---
 

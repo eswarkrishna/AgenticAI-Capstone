@@ -53,13 +53,13 @@ Depends on: Phase 2 gate. OpenAI key required from here on (mocks OK for unit te
 
 | ID | Task | Files | Gate | Status |
 |---|---|---|---|---|
-| T3.1 | `parse_documents(resume_text, jd_text) -> ParseResult` with structured LLM output mapped to Pydantic | `src/resume_screener/agents/parsing_agent.py` | P3-01 | [ ] |
-| T3.2 | Delimiter-wrap untrusted text (`<<<RESUME>>>` / `<<<END_RESUME>>>`); system prompt ignores instructions inside delimiters | same | P3-04 | [ ] |
-| T3.3 | Drop/ignore PII keys even if the model emits them; `CandidateProfile` has no name/email/phone/gender/age/nationality/photo/address | same | P3-02 | [ ] |
-| T3.4 | One automatic retry on `ValidationError` | same | P3-03 | [ ] |
-| T3.5 | Phase 3 tests (mocked LLM or recorded fixture): 3 fixture pairs (one per role family), PII strip, retry, injection | `tests/test_parsing_agent.py` | P3-01–P3-04 | [ ] |
+| T3.1 | `parse_documents(resume_text, jd_text) -> ParseResult` with structured LLM output mapped to Pydantic | `src/resume_screener/agents/parsing_agent.py` | P3-01 | [x] |
+| T3.2 | Delimiter-wrap untrusted text (`<<<RESUME>>>` / `<<<END_RESUME>>>`); system prompt ignores instructions inside delimiters | same | P3-04 | [x] |
+| T3.3 | Drop/ignore PII keys even if the model emits them; `CandidateProfile` has no name/email/phone/gender/age/nationality/photo/address | same | P3-02 | [x] |
+| T3.4 | One automatic retry on `ValidationError` | same | P3-03 | [x] |
+| T3.5 | Phase 3 tests (mocked LLM or recorded fixture): 3 fixture pairs (one per role family), PII strip, retry, injection | `tests/test_parsing_agent.py` | P3-01–P3-04 | [x] |
 
-**Phase gate:** three fixture pairs parse; no PII keys; retry and injection tests pass.
+**Phase gate:** three fixture pairs parse; no PII keys; retry and injection tests pass. **Passed.**
 
 ---
 
@@ -71,13 +71,13 @@ Depends on: Phase 3 gate. Label accuracy is **not** gated here (that is Phase 7)
 
 | ID | Task | Files | Gate | Status |
 |---|---|---|---|---|
-| T4.1 | Retriever `retrieve_competency_benchmarks(role_family, query, k=5)` filtered by `role_family`; expose as a LangChain tool | `src/resume_screener/rag/retriever.py` | P4-01 | [ ] |
-| T4.2 | `score_candidate(candidate, role, resume_text) -> (Scorecard, list[RetrievedChunk])`: retrieve, then score skills → experience → education with resume evidence | `src/resume_screener/agents/scoring_agent.py` | P4-02 | [ ] |
-| T4.3 | Enforce label decision rules (Strong / Possible / Not Relevant) and never emit Strong Match when must-haves are absent | same | P4-02 | [ ] |
-| T4.4 | Thin evidence → lower confidence + `recruiter_questions`; custom validator: evidence required when a dimension score ≥ 8 | `src/resume_screener/schemas.py`, scoring agent | P4-03 | [ ] |
-| T4.5 | Phase 4 tests: family-filtered retrieval; one Strong / Possible / Not Relevant fixture scorecard | `tests/test_retriever.py`, `tests/test_scoring_agent.py` | P4-01–P4-03 | [ ] |
+| T4.1 | Retriever `retrieve_competency_benchmarks(role_family, query, k=5)` filtered by `role_family`; expose as a LangChain tool | `src/resume_screener/rag/retriever.py` | P4-01 | [x] |
+| T4.2 | `score_candidate(candidate, role, resume_text) -> (Scorecard, list[RetrievedChunk])`: retrieve, then score skills → experience → education with resume evidence | `src/resume_screener/agents/scoring_agent.py` | P4-02 | [x] |
+| T4.3 | Enforce label decision rules (Strong / Possible / Not Relevant) and never emit Strong Match when must-haves are absent | same | P4-02 | [x] |
+| T4.4 | Thin evidence → lower confidence + `recruiter_questions`; custom validator: evidence required when a dimension score ≥ 8 | `src/resume_screener/schemas.py`, scoring agent | P4-03 | [x] |
+| T4.5 | Phase 4 tests: family-filtered retrieval; one Strong / Possible / Not Relevant fixture scorecard | `tests/test_retriever.py`, `tests/test_scoring_agent.py` | P4-01–P4-03 | [x] |
 
-**Phase gate:** retriever returns same-family chunks; three fixture scorecards validate; empty evidence on a high score fails validation.
+**Phase gate:** retriever returns same-family chunks; three fixture scorecards validate; empty evidence on a high score fails validation. **Passed.**
 
 ---
 

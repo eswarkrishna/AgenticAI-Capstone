@@ -157,3 +157,25 @@ class EvalCase(BaseModel):
     jd_path: str
     resume_pdf: str
     notes: str = ""
+
+
+class ParseResult(BaseModel):
+    """Output of the parsing agent. Scoring must only see `candidate` (no PII)."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    candidate: CandidateProfile
+    role: RoleProfile
+    raw_pii_redacted: bool = False
+
+
+class RetrievedChunk(BaseModel):
+    """One competency-benchmark hit from the retriever."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    id: str
+    title: str
+    text: str
+    role_family: RoleFamily
+    score: float = Field(ge=0.0)
