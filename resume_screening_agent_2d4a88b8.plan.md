@@ -7,7 +7,7 @@ todos:
     status: completed
   - id: phase-2-data-kb
     content: "Phase 2 — Data & KB: 30 labelled resume-JD pairs, competency markdown, Chroma ingest"
-    status: pending
+    status: completed
   - id: phase-3-parsing
     content: "Phase 3 — Parsing Agent: LLM JSON extraction, PII strip, schema retry, injection wrap"
     status: pending
