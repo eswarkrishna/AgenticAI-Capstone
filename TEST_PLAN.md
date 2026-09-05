@@ -25,11 +25,11 @@ No Greenhouse/Lever/Workday tests, no real candidate PII, no production auth, no
 
 | ID | Type | Check | Pass |
 |---|---|---|---|
-| P1-01 | Unit | `pytest` schema validation rejects PII-shaped extra fields (`extra=forbid`) | [ ] |
-| P1-02 | Unit | Score outside 1–10 is rejected | [ ] |
-| P1-03 | Unit | PDF extractor returns non-empty text from a fixture PDF | [ ] |
-| P1-04 | Manual | `streamlit run app/streamlit_app.py` shows Screen / Review / Log pages | [ ] |
-| P1-05 | Doc | `.env.example` documents every config variable | [ ] |
+| P1-01 | Unit | `pytest` schema validation rejects PII-shaped extra fields (`extra=forbid`) | [x] |
+| P1-02 | Unit | Score outside 1–10 is rejected | [x] |
+| P1-03 | Unit | PDF extractor returns non-empty text from a fixture PDF | [x] |
+| P1-04 | Manual | `streamlit run app/streamlit_app.py` shows Screen / Review / Log pages | [x] |
+| P1-05 | Doc | `.env.example` documents every config variable | [x] |
 
 **Command:** `pytest tests/test_schemas.py tests/test_pdf.py`
 
@@ -39,13 +39,13 @@ No Greenhouse/Lever/Workday tests, no real candidate PII, no production auth, no
 
 | ID | Type | Check | Pass |
 |---|---|---|---|
-| P2-01 | Data | 30 labelled pairs exist; `labels.json` validates as `EvalCase` | [ ] |
-| P2-02 | Data | Balance: 10 engineering / 10 product_design / 10 operations | [ ] |
-| P2-03 | Data | Balance: 10 strong_match / 10 possible_fit / 10 not_relevant (cross-cut) | [ ] |
-| P2-04 | Data | At least 6 hard cases: synonym skills, keyword-stuffed weak resume, career-switcher, overqualified mismatch, missing degree + strong experience, uncommon JD tools | [ ] |
-| P2-05 | Smoke | `python -m resume_screener.rag.ingest` creates `data/chroma/` | [ ] |
-| P2-06 | Smoke | Query “backend software engineer” returns >= 1 chunk | [ ] |
-| P2-07 | Doc | README snippet for regenerating PDFs and the index | [ ] |
+| P2-01 | Data | 30 labelled pairs exist; `labels.json` validates as `EvalCase` | [x] |
+| P2-02 | Data | Balance: 10 engineering / 10 product_design / 10 operations | [x] |
+| P2-03 | Data | Balance: 10 strong_match / 10 possible_fit / 10 not_relevant (cross-cut) | [x] |
+| P2-04 | Data | At least 6 hard cases: synonym skills, keyword-stuffed weak resume, career-switcher, overqualified mismatch, missing degree + strong experience, uncommon JD tools | [x] |
+| P2-05 | Smoke | `python -m resume_screener.rag.ingest` creates `data/chroma/` | [x] |
+| P2-06 | Smoke | Query “backend software engineer” returns >= 1 chunk | [x] |
+| P2-07 | Doc | README snippet for regenerating PDFs and the index | [x] |
 
 ---
 

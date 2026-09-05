@@ -1,0 +1,242 @@
+[
+  {
+    "id": "eng-sm-01",
+    "role_family": "engineering",
+    "label": "strong_match",
+    "jd_path": "data/eval/jds/eng-sm-01.md",
+    "resume_pdf": "data/eval/resumes/eng-sm-01.pdf",
+    "notes": "Senior backend profile matches Python, APIs, and PostgreSQL must-haves."
+  },
+  {
+    "id": "eng-sm-02",
+    "role_family": "engineering",
+    "label": "strong_match",
+    "jd_path": "data/eval/jds/eng-sm-02.md",
+    "resume_pdf": "data/eval/resumes/eng-sm-02.pdf",
+    "notes": "Data engineer with Spark, SQL, and warehouse experience."
+  },
+  {
+    "id": "eng-sm-03",
+    "role_family": "engineering",
+    "label": "strong_match",
+    "jd_path": "data/eval/jds/eng-sm-03.md",
+    "resume_pdf": "data/eval/resumes/eng-sm-03.pdf",
+    "notes": "Frontend engineer with React and TypeScript depth."
+  },
+  {
+    "id": "eng-sm-04",
+    "role_family": "engineering",
+    "label": "strong_match",
+    "jd_path": "data/eval/jds/eng-sm-04.md",
+    "resume_pdf": "data/eval/resumes/eng-sm-04.pdf",
+    "notes": "hard case: synonym skills (k8s vs Kubernetes)"
+  },
+  {
+    "id": "eng-pf-01",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-pf-01.md",
+    "resume_pdf": "data/eval/resumes/eng-pf-01.pdf",
+    "notes": "hard case: missing degree but strong experience"
+  },
+  {
+    "id": "eng-pf-02",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-pf-02.md",
+    "resume_pdf": "data/eval/resumes/eng-pf-02.pdf",
+    "notes": "Mobile engineer applying to backend; overlapping systems skill, missing API depth."
+  },
+  {
+    "id": "eng-pf-03",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-pf-03.md",
+    "resume_pdf": "data/eval/resumes/eng-pf-03.pdf",
+    "notes": "hard case: JD with uncommon tool names"
+  },
+  {
+    "id": "eng-nr-01",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/eval/resumes/eng-nr-01.pdf",
+    "notes": "hard case: keyword-stuffed weak resume"
+  },
+  {
+    "id": "eng-nr-02",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/eval/resumes/eng-nr-02.pdf",
+    "notes": "Graphic designer applying to backend engineering."
+  },
+  {
+    "id": "eng-nr-03",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-03.md",
+    "resume_pdf": "data/eval/resumes/eng-nr-03.pdf",
+    "notes": "New graduate vs staff-level years and systems bar."
+  },
+  {
+    "id": "pd-sm-01",
+    "role_family": "product_design",
+    "label": "strong_match",
+    "jd_path": "data/eval/jds/pd-sm-01.md",
+    "resume_pdf": "data/eval/resumes/pd-sm-01.pdf",
+    "notes": "B2B SaaS PM with roadmap, discovery, and stakeholder skills."
+  },
+  {
+    "id": "pd-sm-02",
+    "role_family": "product_design",
+    "label": "strong_match",
+    "jd_path": "data/eval/jds/pd-sm-02.md",
+    "resume_pdf": "data/eval/resumes/pd-sm-02.pdf",
+    "notes": "Product designer with Figma, UX flows, and design systems."
+  },
+  {
+    "id": "pd-sm-03",
+    "role_family": "product_design",
+    "label": "strong_match",
+    "jd_path": "data/eval/jds/pd-sm-03.md",
+    "resume_pdf": "data/eval/resumes/pd-sm-03.pdf",
+    "notes": "UX researcher with mixed methods and insight delivery."
+  },
+  {
+    "id": "pd-pf-01",
+    "role_family": "product_design",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/pd-pf-01.md",
+    "resume_pdf": "data/eval/resumes/pd-pf-01.pdf",
+    "notes": "hard case: career-switcher"
+  },
+  {
+    "id": "pd-pf-02",
+    "role_family": "product_design",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/pd-pf-02.md",
+    "resume_pdf": "data/eval/resumes/pd-pf-02.pdf",
+    "notes": "Visual designer applying to product design; craft yes, product process thin."
+  },
+  {
+    "id": "pd-pf-03",
+    "role_family": "product_design",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/pd-pf-03.md",
+    "resume_pdf": "data/eval/resumes/pd-pf-03.pdf",
+    "notes": "Associate PM vs senior PM years and strategy bar."
+  },
+  {
+    "id": "pd-pf-04",
+    "role_family": "product_design",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/pd-pf-04.md",
+    "resume_pdf": "data/eval/resumes/pd-pf-04.pdf",
+    "notes": "Content designer applying to UX research; writing skill, research methods missing."
+  },
+  {
+    "id": "pd-nr-01",
+    "role_family": "product_design",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/pd-nr-01.md",
+    "resume_pdf": "data/eval/resumes/pd-nr-01.pdf",
+    "notes": "Backend engineer with no product or design practice."
+  },
+  {
+    "id": "pd-nr-02",
+    "role_family": "product_design",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/pd-nr-02.md",
+    "resume_pdf": "data/eval/resumes/pd-nr-02.pdf",
+    "notes": "Account executive; sales motion not product discovery."
+  },
+  {
+    "id": "pd-nr-03",
+    "role_family": "product_design",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/pd-nr-03.md",
+    "resume_pdf": "data/eval/resumes/pd-nr-03.pdf",
+    "notes": "Warehouse supervisor applying to UX research."
+  },
+  {
+    "id": "ops-sm-01",
+    "role_family": "operations",
+    "label": "strong_match",
+    "jd_path": "data/eval/jds/ops-sm-01.md",
+    "resume_pdf": "data/eval/resumes/ops-sm-01.pdf",
+    "notes": "Supply chain manager with S&OP, inventory, and vendor work."
+  },
+  {
+    "id": "ops-sm-02",
+    "role_family": "operations",
+    "label": "strong_match",
+    "jd_path": "data/eval/jds/ops-sm-02.md",
+    "resume_pdf": "data/eval/resumes/ops-sm-02.pdf",
+    "notes": "Logistics / 3PL operations with TMS and carrier management."
+  },
+  {
+    "id": "ops-sm-03",
+    "role_family": "operations",
+    "label": "strong_match",
+    "jd_path": "data/eval/jds/ops-sm-03.md",
+    "resume_pdf": "data/eval/resumes/ops-sm-03.pdf",
+    "notes": "Procurement specialist with sourcing, contracts, and savings."
+  },
+  {
+    "id": "ops-pf-01",
+    "role_family": "operations",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/ops-pf-01.md",
+    "resume_pdf": "data/eval/resumes/ops-pf-01.pdf",
+    "notes": "Operations analyst vs manager scope; analysis yes, people leadership no."
+  },
+  {
+    "id": "ops-pf-02",
+    "role_family": "operations",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/ops-pf-02.md",
+    "resume_pdf": "data/eval/resumes/ops-pf-02.pdf",
+    "notes": "Customer success ops applying to supply chain; ops discipline, domain gap."
+  },
+  {
+    "id": "ops-pf-03",
+    "role_family": "operations",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/ops-pf-03.md",
+    "resume_pdf": "data/eval/resumes/ops-pf-03.pdf",
+    "notes": "Military logistics to civilian ops; transferable, civilian ERP missing."
+  },
+  {
+    "id": "ops-nr-01",
+    "role_family": "operations",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/ops-nr-01.md",
+    "resume_pdf": "data/eval/resumes/ops-nr-01.pdf",
+    "notes": "hard case: overqualified mismatch"
+  },
+  {
+    "id": "ops-nr-02",
+    "role_family": "operations",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/ops-nr-02.md",
+    "resume_pdf": "data/eval/resumes/ops-nr-02.pdf",
+    "notes": "Frontend engineer applying to logistics."
+  },
+  {
+    "id": "ops-nr-03",
+    "role_family": "operations",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/ops-nr-03.md",
+    "resume_pdf": "data/eval/resumes/ops-nr-03.pdf",
+    "notes": "Brand designer applying to procurement."
+  },
+  {
+    "id": "ops-nr-04",
+    "role_family": "operations",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/ops-nr-04.md",
+    "resume_pdf": "data/eval/resumes/ops-nr-04.pdf",
+    "notes": "Academic researcher with no operations or supply-chain practice."
+  }
+]
