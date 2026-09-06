@@ -4,7 +4,7 @@ Source of truth: [resume_screening_agent_2d4a88b8.plan.md](resume_screening_agen
 
 Rules: later phases must not start until the prior phase gate passes. Check a task only when its files exist and its linked TEST_PLAN IDs pass.
 
-**Status on `main`:** Phases 1–4 are done. Phase 5 (LangGraph + HITL + audit) lands in this change. Next work after the Phase 5 gate is T6.1.
+**Status on `main`:** Phases 1–5 are done. Phase 6 (Streamlit recruiter UI) lands in this change. Next work after the Phase 6 gate is T7.1.
 
 ---
 
@@ -109,12 +109,12 @@ Depends on: Phase 5 gate.
 
 | ID | Task | Files | Gate | Status |
 |---|---|---|---|---|
-| T6.1 | Screen page: upload PDF, paste/upload JD, run `start_screening`, show dimension scores, label, confidence, rationale, benchmark titles, recommended action; HITL banner + link to Review Queue | `app/streamlit_app.py` (or `app/pages/`) | P6-01, P6-02 | [ ] |
-| T6.2 | Review Queue: list pending interrupts, pre-filled summary + agent questions, upgrade/downgrade/keep + notes, Submit → `resume_review` | same | P6-03 | [ ] |
-| T6.3 | Tracking Log: table (time, JD title, predicted/final label, confidence, overridden, HITL); filters (label, role_family, overridden); CSV export; filename OK, no demographics | same | P6-05 | [ ] |
-| T6.4 | Checkpoint survival: refresh does not lose in-flight review | Sqlite checkpointer | P6-04 | [ ] |
+| T6.1 | Screen page: upload PDF, paste/upload JD, run `start_screening`, show dimension scores, label, confidence, rationale, benchmark titles, recommended action; HITL banner + link to Review Queue | `app/streamlit_app.py` (or `app/pages/`) | P6-01, P6-02 | [x] |
+| T6.2 | Review Queue: list pending interrupts, pre-filled summary + agent questions, upgrade/downgrade/keep + notes, Submit → `resume_review` | same | P6-03 | [x] |
+| T6.3 | Tracking Log: table (time, JD title, predicted/final label, confidence, overridden, HITL); filters (label, role_family, overridden); CSV export; filename OK, no demographics | same | P6-05 | [x] |
+| T6.4 | Checkpoint survival: refresh does not lose in-flight review | Sqlite checkpointer | P6-04 | [x] |
 
-**Phase gate:** fixture PDF+JD → scorecard in one session; HITL override appears in log; refresh-safe; no names on Screen.
+**Phase gate:** fixture PDF+JD → scorecard in one session; HITL override appears in log; refresh-safe; no names on Screen. **Passed.**
 
 ---
 
