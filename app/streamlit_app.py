@@ -26,7 +26,7 @@ def page_screen() -> None:
     st.caption("Screen candidate — upload a resume PDF and job description.")
     st.file_uploader("Resume PDF", type=["pdf"], key="screen_resume")
     st.text_area("Job description", height=180, key="screen_jd")
-    st.button("Run screening", disabled=True, help="Wiring arrives in Phase 5.")
+    st.button("Run screening", disabled=True, help="Wiring arrives in Phase 6.")
     settings = get_settings()
     st.caption(
         f"Confidence threshold {settings.confidence_threshold} · "
@@ -37,13 +37,13 @@ def page_screen() -> None:
 def page_review() -> None:
     st.header("Review")
     st.caption("Review queue — borderline and low-confidence scorecards land here.")
-    st.info("No pending reviews. Human-in-the-loop routing arrives in Phase 5.")
+    st.info("No pending reviews. Review Queue wiring arrives in Phase 6.")
 
 
 def page_log() -> None:
     st.header("Log")
     st.caption("Tracking log — every run writes an audit row.")
-    st.info("No tracking records yet. Persistence arrives in Phase 5.")
+    st.info("No tracking records yet. Log wiring arrives in Phase 6.")
 
 
 screen = st.Page(page_screen, title="Screen", icon=":material/person_search:")

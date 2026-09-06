@@ -14,7 +14,7 @@ cp .env.example .env
 OpenAI is required from Phase 3 onward for live LLM calls. Unit tests mock the model.
 
 ```bash
-pytest tests/test_schemas.py tests/test_pdf.py tests/test_eval_cases.py tests/test_ingest.py tests/test_parsing_agent.py tests/test_retriever.py tests/test_scoring_agent.py
+pytest
 streamlit run app/streamlit_app.py
 ```
 
@@ -25,6 +25,12 @@ streamlit run app/streamlit_app.py
 ## Scoring and RAG (Phase 4)
 
 `retrieve_competency_benchmarks(role_family, query)` returns same-family Chroma chunks and is also a LangChain tool. `score_candidate(candidate, role, resume_text)` retrieves benchmarks, scores skills → experience → education with resume-grounded evidence, then applies label rules (never Strong Match when must-haves are absent).
+
+## Graph, HITL, and audit (Phase 5)
+
+`start_screening(resume_path, jd_text, thread_id)` runs the LangGraph loop: ingest → parse → retrieve → score → validate → persist, or `interrupt()` for human review. High-confidence Strong Match / Not Relevant (`confidence >= 0.7`) auto-persists. Possible Fit or low confidence pauses; `resume_review(thread_id, final_label, notes)` resumes via `Command(resume=...)`.
+
+Every run writes a SQLite `tracking` row (`data/tracking.db`). Recruiter decisions append to `data/overrides.jsonl`. Checkpoints live in `data/checkpoints.db` so a Streamlit refresh can resume an in-flight review. Tests inject fake LLMs; a live run needs `OPENAI_API_KEY`.
 
 ## Regenerating eval PDFs
 

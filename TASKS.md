@@ -4,7 +4,7 @@ Source of truth: [resume_screening_agent_2d4a88b8.plan.md](resume_screening_agen
 
 Rules: later phases must not start until the prior phase gate passes. Check a task only when its files exist and its linked TEST_PLAN IDs pass.
 
-**Status on `main`:** Phase 1 (T1.1–T1.6 / P1-01–P1-05) and Phase 2 (T2.1–T2.7 / P2-01–P2-07) are done. Next work is T3.1.
+**Status on `main`:** Phases 1–4 are done. Phase 5 (LangGraph + HITL + audit) lands in this change. Next work after the Phase 5 gate is T6.1.
 
 ---
 
@@ -89,15 +89,15 @@ Depends on: Phase 4 gate.
 
 | ID | Task | Files | Gate | Status |
 |---|---|---|---|---|
-| T5.1 | Graph state: texts, filenames, profiles, chunks, scorecard, HITL flags, tracking/thread ids, error | `src/resume_screener/graph/state.py` | — | [ ] |
-| T5.2 | StateGraph: ingest → parse → retrieve → score → validate → persist **or** `human_review` (`interrupt()`); `SqliteSaver` at `data/checkpoints.db` | `src/resume_screener/graph/workflow.py` | P5-01, P5-02 | [ ] |
-| T5.3 | Routing: auto-persist iff label in {`strong_match`, `not_relevant`} AND `confidence >= 0.7`; else interrupt | same | P5-01, P5-02 | [ ] |
-| T5.4 | SQLite tracking table + `insert_run`, `finalize_disposition`, `list_pending_review`, `list_all`, `export_csv`; append-only `data/overrides.jsonl` | `src/resume_screener/persistence/tracking.py` | P5-01, P5-03 | [ ] |
-| T5.5 | Public API: `start_screening(resume_path, jd_text, thread_id)`, `resume_review(thread_id, final_label, notes)` via `Command(resume=...)` | graph module or `src/resume_screener/api.py` | P5-01–P5-03 | [ ] |
-| T5.6 | Failed parse/score sets `error` and still writes an audit/error row — no silent drops | persistence + graph | P5-04 | [ ] |
-| T5.7 | Phase 5 tests | `tests/test_graph.py` | P5-01–P5-04 | [ ] |
+| T5.1 | Graph state: texts, filenames, profiles, chunks, scorecard, HITL flags, tracking/thread ids, error | `src/resume_screener/graph/state.py` | — | [x] |
+| T5.2 | StateGraph: ingest → parse → retrieve → score → validate → persist **or** `human_review` (`interrupt()`); `SqliteSaver` at `data/checkpoints.db` | `src/resume_screener/graph/workflow.py` | P5-01, P5-02 | [x] |
+| T5.3 | Routing: auto-persist iff label in {`strong_match`, `not_relevant`} AND `confidence >= 0.7`; else interrupt | same | P5-01, P5-02 | [x] |
+| T5.4 | SQLite tracking table + `insert_run`, `finalize_disposition`, `list_pending_review`, `list_all`, `export_csv`; append-only `data/overrides.jsonl` | `src/resume_screener/persistence/tracking.py` | P5-01, P5-03 | [x] |
+| T5.5 | Public API: `start_screening(resume_path, jd_text, thread_id)`, `resume_review(thread_id, final_label, notes)` via `Command(resume=...)` | graph module or `src/resume_screener/api.py` | P5-01–P5-03 | [x] |
+| T5.6 | Failed parse/score sets `error` and still writes an audit/error row — no silent drops | persistence + graph | P5-04 | [x] |
+| T5.7 | Phase 5 tests | `tests/test_graph.py` | P5-01–P5-04 | [x] |
 
-**Phase gate:** high-confidence Strong/Not Relevant auto-persists with no pending interrupt; Possible Fit / low confidence interrupts; override logged; failures still audited.
+**Phase gate:** high-confidence Strong/Not Relevant auto-persists with no pending interrupt; Possible Fit / low confidence interrupts; override logged; failures still audited. **Passed.**
 
 ---
 

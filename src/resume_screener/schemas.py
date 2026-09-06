@@ -136,14 +136,15 @@ class TrackingRecord(BaseModel):
     candidate_profile_json: dict[str, Any]
     role_profile_json: dict[str, Any]
     retrieved_chunk_ids: list[str] = Field(default_factory=list)
-    scorecard_json: dict[str, Any]
-    predicted_label: MatchLabel
+    scorecard_json: dict[str, Any] = Field(default_factory=dict)
+    predicted_label: MatchLabel | None = None
     final_label: MatchLabel | None = None
-    confidence: float = Field(ge=0.0, le=1.0)
+    confidence: float = Field(default=0.0, ge=0.0, le=1.0)
     needs_human_review: bool
     overridden: bool = False
     recruiter_notes: str = ""
     thread_id: str
+    error: str | None = None
 
 
 class EvalCase(BaseModel):
@@ -179,3 +180,31 @@ class RetrievedChunk(BaseModel):
     text: str
     role_family: RoleFamily
     score: float = Field(ge=0.0)
+
+
+class RecruiterFeedback(BaseModel):
+    """HITL resume payload from `resume_review`."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    final_label: MatchLabel
+    notes: str = ""
+
+
+class ScreeningResult(BaseModel):
+    """Public result of `start_screening` / `resume_review`."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    thread_id: str
+    tracking_id: str
+    scorecard: Scorecard | None = None
+    candidate: CandidateProfile | None = None
+    role: RoleProfile | None = None
+    retrieved_chunks: list[RetrievedChunk] = Field(default_factory=list)
+    needs_human_review: bool = False
+    interrupted: bool = False
+    interrupt_payload: dict[str, Any] | None = None
+    tracking: TrackingRecord | None = None
+    recruiter_feedback: RecruiterFeedback | None = None
+    error: str | None = None
