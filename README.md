@@ -32,6 +32,20 @@ streamlit run app/streamlit_app.py
 
 Every run writes a SQLite `tracking` row (`data/tracking.db`). Recruiter decisions append to `data/overrides.jsonl`. Checkpoints live in `data/checkpoints.db` so a Streamlit refresh can resume an in-flight review. Tests inject fake LLMs; a live run needs `OPENAI_API_KEY`.
 
+## Recruiter UI (Phase 6)
+
+`streamlit run app/streamlit_app.py` serves three pages:
+
+- **Screen** — upload a resume PDF and paste/upload a JD, or click a demo fixture. Shows dimension scores, overall label, confidence, rationale, competency benchmark titles, and recommended action. Possible Fit / low confidence shows a banner and a link to Review. Candidate name is never displayed.
+- **Review** — pending HITL rows with agent questions. Keep / upgrade / downgrade + notes, then `resume_review`. SQLite checkpoints survive a browser refresh.
+- **Log** — audit table with filters (label, role family, overridden) and CSV export. Filename is allowed; no demographic columns.
+
+Without `OPENAI_API_KEY`, the three demo fixtures (`eng-sm-01` Strong Match, `eng-pf-01` Possible Fit, `eng-nr-02` Not Relevant) still run using the same recorded parse/score scripts as the tests. Custom uploads need a key.
+
+```bash
+streamlit run app/streamlit_app.py
+```
+
 ## Regenerating eval PDFs
 
 Resumes are authored as markdown in `data/eval/resumes/*.md` and rendered to PDF with fpdf2 so PyMuPDF stays on the extraction path.
