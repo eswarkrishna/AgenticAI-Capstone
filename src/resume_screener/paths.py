@@ -15,3 +15,6 @@ EVAL_JDS_DIR = EVAL_DIR / "jds"
 KB_DIR = REPO_ROOT / "data" / "competency_kb"
 
 COLLECTION_NAME = "competency_benchmarks"
+
+CHECKPOINT_PATH = REPO_ROOT / "data" / "checkpoints.db"
+OVERRIDES_PATH = REPO_ROOT / "data" / "overrides.jsonl"

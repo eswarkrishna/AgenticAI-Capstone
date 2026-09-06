@@ -73,25 +73,25 @@ todos:
     status: completed
   - id: t5-1-state
     content: "T5.1 LangGraph state schema"
-    status: pending
+    status: completed
   - id: t5-2-graph
     content: "T5.2 StateGraph ingest-parse-retrieve-score-validate-persist/HITL + SqliteSaver"
-    status: pending
+    status: completed
   - id: t5-3-routing
     content: "T5.3 Confidence router (auto-persist vs interrupt at 0.7)"
-    status: pending
+    status: completed
   - id: t5-4-tracking
     content: "T5.4 SQLite tracking API + overrides.jsonl"
-    status: pending
+    status: completed
   - id: t5-5-public-api
     content: "T5.5 start_screening and resume_review public API"
-    status: pending
+    status: completed
   - id: t5-6-errors
     content: "T5.6 Failed parse/score still writes an audit row"
-    status: pending
+    status: completed
   - id: t5-7-phase5-tests
     content: "T5.7 Phase 5 tests (P5-01–P5-04)"
-    status: pending
+    status: completed
   - id: t6-1-screen
     content: "T6.1 Screen page: upload, scorecard, no candidate name"
     status: pending

@@ -78,12 +78,14 @@ Phase 4 proves wiring. Label accuracy is **not** gated here; that is Phase 7.
 
 | ID | Type | Check | Pass |
 |---|---|---|---|
-| P5-01 | Integration | High-confidence `strong_match` or `not_relevant` writes one tracking row and leaves no pending interrupt | [ ] |
-| P5-02 | Integration | `possible_fit` or low confidence (`confidence < 0.7`) leaves an interrupt | [ ] |
-| P5-03 | Integration | `resume_review` sets `overridden` correctly and writes `final_label` | [ ] |
-| P5-04 | Integration | Failed parse/score sets `error` and still writes an audit (or error) row — no silent drops | [ ] |
+| P5-01 | Integration | High-confidence `strong_match` or `not_relevant` writes one tracking row and leaves no pending interrupt | [x] |
+| P5-02 | Integration | `possible_fit` or low confidence (`confidence < 0.7`) leaves an interrupt | [x] |
+| P5-03 | Integration | `resume_review` sets `overridden` correctly and writes `final_label` | [x] |
+| P5-04 | Integration | Failed parse/score sets `error` and still writes an audit (or error) row — no silent drops | [x] |
 
 **APIs under test:** `start_screening`, `resume_review`
+
+**Command:** `pytest tests/test_graph.py`
 
 ---
 
