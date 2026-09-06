@@ -120,7 +120,7 @@ SCORE = {
     "eng-sm-01": {
         "skills": _dim(9, "Python", "PostgreSQL", "Docker"),
         "experience": _dim(8, "Senior Backend Engineer", "7 years"),
-        "education": _dim(8, "B.S. Computer Science"),
+        "education": _dim(8, "B.S. Computer Science", "State University"),
         "rationale": "Must-have skills and years are present on the resume.",
         "recruiter_questions": [],
     },
