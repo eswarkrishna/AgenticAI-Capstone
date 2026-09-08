@@ -94,16 +94,16 @@ todos:
     status: completed
   - id: t6-1-screen
     content: "T6.1 Screen page: upload, scorecard, no candidate name"
-    status: pending
+    status: completed
   - id: t6-2-review
     content: "T6.2 Review Queue: pending interrupts, override submit"
-    status: pending
+    status: completed
   - id: t6-3-log
     content: "T6.3 Tracking Log: filters + CSV export"
-    status: pending
+    status: completed
   - id: t6-4-checkpoint
     content: "T6.4 Refresh-safe in-flight review (P6-04)"
-    status: pending
+    status: completed
   - id: t7-1-eval
     content: "T7.1 Eval harness over 30 pairs + report.json"
     status: pending

@@ -93,11 +93,13 @@ Phase 4 proves wiring. Label accuracy is **not** gated here; that is Phase 7.
 
 | ID | Type | Check | Pass |
 |---|---|---|---|
-| P6-01 | Manual | Upload fixture PDF + JD → scorecard on Screen in one session | [ ] |
-| P6-02 | Manual | Screen shows dimension scores, label, confidence, rationale, benchmark titles, recommended action — never candidate name | [ ] |
-| P6-03 | Manual | Possible Fit appears in Review Queue; submit override; Tracking Log shows `overridden=true` and new final label | [ ] |
-| P6-04 | Manual | Refresh does not lose in-flight review (Sqlite checkpointer) | [ ] |
-| P6-05 | Manual | Tracking Log filters (label, role_family, overridden) and CSV export work; no demographic fields | [ ] |
+| P6-01 | Manual | Upload fixture PDF + JD → scorecard on Screen in one session | [x] |
+| P6-02 | Manual | Screen shows dimension scores, label, confidence, rationale, benchmark titles, recommended action — never candidate name | [x] |
+| P6-03 | Manual | Possible Fit appears in Review Queue; submit override; Tracking Log shows `overridden=true` and new final label | [x] |
+| P6-04 | Manual | Refresh does not lose in-flight review (Sqlite checkpointer) | [x] |
+| P6-05 | Manual | Tracking Log filters (label, role_family, overridden) and CSV export work; no demographic fields | [x] |
+
+**Helpers:** `pytest tests/test_ui.py` covers scorecard/PII view, filters, CSV columns, demo fixture run, and HITL override.
 
 ---
 
@@ -129,6 +131,7 @@ tests/
   test_retriever.py        # P4-01
   test_scoring_agent.py    # P4-02
   test_graph.py            # P5-01–P5-04
+  test_ui.py               # Phase 6 helpers + demo fixture run
 eval/
   run_eval.py              # P7-01–P7-03
   results/
