@@ -1,0 +1,23 @@
+services:
+  resume-screener:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: resume-screener:latest
+    container_name: resume-screener
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    environment:
+      CHROMA_DIR: data/chroma
+      SQLITE_PATH: data/tracking.db
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8501/_stcore/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 40s
