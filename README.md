@@ -63,6 +63,23 @@ python scripts/write_eval_data.py
 python -m resume_screener.eval.render_pdfs
 ```
 
+## Importing the open resume set (optional)
+
+The LiveCareer "Resume Dataset" (2,484 PDFs in 24 job categories) can be imported as a second, larger eval set. It is only partially anonymized upstream, so the importer redacts before anything is written under the repo:
+
+- Drops name headers, emails, phone numbers, URLs, street and city/state/zip addresses, `Personal Information` / `Personal Details` blocks (also when collapsed onto one line), demographic fields (date of birth, gender, marital status, nationality, religion, age, passport/visa), self-introductions ("I, Jane Doe, …"), and `References` sections.
+- Copies PDFs that needed no redaction byte-for-byte so the real-world layout survives; re-renders redacted ones with fpdf2. Every output PDF is re-extracted and re-scanned; anything with a residual hit is excluded and listed in the manifest.
+- Skips blank PDFs and exact duplicates.
+
+Mapping to `RoleFamily`: `INFORMATION-TECHNOLOGY` plus software-titled `ENGINEERING` resumes are engineering candidates, paired with the engineering JD whose must-haves overlap most (label from overlap ratio: ≥ 75% Strong Match, > 0 Possible Fit, 0 Not Relevant). Every other category is a `not_relevant` pool against a random engineering JD. All labels are weak and say so in `notes`; review them before quoting accuracy on this set.
+
+```bash
+python -m resume_screener.eval.open_data --source /path/to/archive/data/data
+python eval/run_eval.py --labels data/eval/labels_open.json --results-dir eval/results_open
+```
+
+Outputs: redacted PDFs and `manifest.json` under `data/external/livecareer/` (gitignored), and a stratified `data/eval/labels_open.json` (`--sample 150` by default; `--sample 0` writes every kept resume). Each harness case costs one parse and one score call. The 30-case `labels.json` and its tests are untouched.
+
 ## Regenerating the competency index
 
 Markdown clusters live in `data/competency_kb/` (30–50 short O*NET-inspired files). Chunk by heading, embed, and persist Chroma collection `competency_benchmarks`:

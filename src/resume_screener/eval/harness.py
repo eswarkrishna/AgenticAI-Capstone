@@ -225,6 +225,7 @@ def run_eval(
     limit: int | None = None,
     parse_llm: Any | None = None,
     score_llm: Any | None = None,
+    labels_path: Path | None = None,
 ) -> dict[str, Any]:
     settings = settings or Settings()
     out_dir = Path(results_dir or RESULTS_DIR)
@@ -232,7 +233,7 @@ def run_eval(
     sqlite_path = out_dir / "tracking.db"
     checkpoint_path = out_dir / "checkpoints.db"
     overrides_path = out_dir / "overrides.jsonl"
-    cases = load_eval_cases()
+    cases = load_eval_cases(labels_path)
     if limit is not None:
         cases = cases[:limit]
     outcomes = [

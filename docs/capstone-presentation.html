@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Resume Screening Agent — CAAE02 Capstone</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #1b3044;
+    --slate: #44546a;
+    --blue: #4472c4;
+    --blue-deep: #2f5597;
+    --orange: #ed7d31;
+    --gold: #ffc000;
+    --green: #548235;
+    --ink: #1c2834;
+    --muted: #5c6b7a;
+    --paper: #f3f5f8;
+    --card: #ffffff;
+    --line: #e3e7ee;
+    --w: 1280px;
+    --h: 720px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: #0e1822;
+    color: var(--ink);
+    font-family: Roboto, "Segoe UI", sans-serif;
+    overflow: hidden;
+  }
+
+  #viewport {
+    width: 100vw;
+    height: calc(100vh - 36px);
+    display: grid;
+    place-items: center;
+  }
+
+  #stage {
+    width: var(--w);
+    height: var(--h);
+    position: relative;
+    transform-origin: center center;
+    background: var(--paper);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    display: none;
+    padding: 28px 40px 36px;
+    background:
+      linear-gradient(180deg, #ffffff 0 72px, transparent 72px),
+      var(--paper);
+  }
+  .slide.active { display: flex; flex-direction: column; }
+
+  .topbar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--blue) 0 62%, var(--orange) 62% 82%, var(--gold) 82%);
+  }
+
+  .mast {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 28px;
+    margin-bottom: 8px;
+  }
+  .brand {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    font-weight: 700;
+    color: var(--blue-deep);
+  }
+  .slideno {
+    font-family: "Roboto Slab", Georgia, serif;
+    font-weight: 700;
+    color: var(--orange);
+    font-size: 14px;
+  }
+
+  h1 {
+    margin: 0 0 16px;
+    font-family: "Roboto Slab", Georgia, serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.15;
+    color: var(--navy);
+  }
+
+  .body { flex: 1; min-height: 0; }
+
+  .foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  /* Title */
+  .title-slide {
+    padding: 0;
+    display: none;
+    background: var(--navy);
+    color: white;
+  }
+  .title-slide.active { display: grid; grid-template-columns: 92px 1fr; }
+  .title-rail {
+    background: linear-gradient(180deg, var(--blue) 0%, var(--blue-deep) 55%, var(--orange) 100%);
+  }
+  .title-main {
+    padding: 56px 64px 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  .eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    font-weight: 700;
+    color: var(--gold);
+  }
+  .wordmark {
+    margin: 28px 0 0;
+    font-family: "Roboto Slab", Georgia, serif;
+    font-weight: 700;
+    line-height: 0.95;
+    font-size: 54px;
+  }
+  .wordmark span { display: block; }
+  .wordmark .accent { color: var(--gold); }
+  .rule {
+    width: 120px;
+    height: 4px;
+    margin: 28px 0 22px;
+    background: linear-gradient(90deg, var(--gold), var(--orange));
+  }
+  .project-kicker {
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #b7c4d4;
+    font-weight: 700;
+  }
+  .project-title {
+    margin: 8px 0 0;
+    font-family: "Roboto Slab", Georgia, serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.25;
+    max-width: 920px;
+  }
+  .meta {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1.3fr 1fr;
+    gap: 18px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+  }
+  .meta small {
+    display: block;
+    color: #9aafc4;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+  .meta strong { font-weight: 500; font-size: 16px; }
+  .hint {
+    position: absolute;
+    right: 28px;
+    bottom: 16px;
+    color: #8ea0b4;
+    font-size: 12px;
+  }
+
+  /* Agenda */
+  .agenda {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 28px;
+  }
+  .agenda a {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 12px;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 10px 14px;
+    min-height: 58px;
+  }
+  .agenda a:hover { border-color: var(--blue); }
+  .num {
+    font-family: "Roboto Slab", Georgia, serif;
+    font-weight: 700;
+    color: var(--orange);
+    font-size: 18px;
+  }
+  .agenda span.label { font-weight: 500; font-size: 16px; color: var(--navy); }
+
+  .grid-4, .grid-3, .grid-2, .grid-5 { display: grid; gap: 12px; }
+  .grid-4 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-5 { grid-template-columns: repeat(5, 1fr); align-content: start; }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px 16px 16px;
+    box-shadow: 0 6px 18px rgba(68, 84, 106, 0.05);
+  }
+  .card h3 {
+    margin: 0 0 8px;
+    font-family: "Roboto Slab", Georgia, serif;
+    font-size: 16px;
+    color: var(--navy);
+  }
+  .card p, .card li { margin: 0; font-size: 14px; line-height: 1.4; color: #2c3a48; }
+  .card ul { margin: 0; padding-left: 16px; }
+  .card li + li { margin-top: 6px; }
+  .kicker {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 6px;
+  }
+  .card.orange { border-top: 4px solid var(--orange); }
+  .card.blue { border-top: 4px solid var(--blue); }
+  .card.gold { border-top: 4px solid var(--gold); }
+  .card.green { border-top: 4px solid #70ad47; }
+  .card.slate { border-top: 4px solid var(--slate); }
+
+  .obj {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 12px;
+    align-items: start;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .badge {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    background: var(--navy);
+    color: white;
+    font-family: "Roboto Slab", Georgia, serif;
+    font-weight: 700;
+  }
+  .obj h3 { margin: 0 0 4px; font-size: 16px; font-family: "Roboto Slab", Georgia, serif; color: var(--navy); }
+  .obj p { margin: 0; font-size: 14px; line-height: 1.4; color: #2c3a48; }
+
+  .col-head {
+    font-family: "Roboto Slab", Georgia, serif;
+    font-size: 18px;
+    margin: 0 0 10px;
+    color: white;
+  }
+  .panel {
+    border-radius: 14px;
+    padding: 16px 18px 8px;
+    color: white;
+    min-height: 0;
+  }
+  .panel.now { background: var(--slate); }
+  .panel.next { background: var(--blue-deep); }
+  .step {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 8px;
+    padding: 9px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    font-size: 14px;
+    line-height: 1.35;
+  }
+  .step b { font-weight: 700; }
+
+  .flow {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 12px 12px 14px;
+    display: flex;
+    flex-direction: column;
+  }
+  .flow .idx {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--orange);
+    color: white;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  .flow h3 {
+    margin: 0 0 8px;
+    font-family: "Roboto Slab", Georgia, serif;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    color: var(--navy);
+  }
+  .flow p { margin: 0; font-size: 13px; line-height: 1.4; color: #2c3a48; }
+  .flow-name {
+    margin: 0 0 12px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .flow-name strong { color: var(--navy); }
+  .slide.arch .body { flex: 0 0 auto; }
+  .slide.arch .foot { margin-top: auto; }
+  .pipe {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .pipe i { color: var(--orange); font-style: normal; }
+  .pipe .split {
+    background: #eef3fb;
+    color: var(--blue-deep);
+    border-radius: 999px;
+    padding: 4px 10px;
+  }
+
+  .phase {
+    background: white;
+    border-left: 5px solid var(--blue);
+    border-radius: 10px;
+    padding: 12px 14px;
+    border-top: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .phase.p2 { border-left-color: var(--orange); }
+  .phase.p3 { border-left-color: var(--gold); }
+  .phase.p4 { border-left-color: #70ad47; }
+  .phase h3 {
+    margin: 0 0 4px;
+    font-family: "Roboto Slab", Georgia, serif;
+    font-size: 15px;
+    color: var(--navy);
+  }
+  .phase p { margin: 0; font-size: 13.5px; line-height: 1.4; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .chip {
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    background: #e8f0ea;
+    color: #2d5a32;
+    border: 1px solid #c9e0cc;
+  }
+  .chip.off {
+    background: #f4f5f7;
+    color: #8b97a3;
+    border-color: var(--line);
+    font-weight: 500;
+  }
+  .chip-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 14px;
+  }
+
+  .page-card h3 { font-size: 18px; }
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: #eef3fb;
+    color: var(--blue-deep);
+    border-radius: 999px;
+    padding: 3px 8px;
+    margin-bottom: 8px;
+  }
+  .fixtures {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    gap: 10px;
+  }
+  .fix {
+    background: white;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    padding: 10px 12px;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+  .fix strong { display: block; font-family: "Roboto Slab", Georgia, serif; color: var(--navy); margin-bottom: 2px; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+  .dot.g { background: #70ad47; }
+  .dot.a { background: var(--gold); }
+  .dot.r { background: #c45911; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 14px;
+  }
+  th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--line); }
+  th {
+    background: var(--navy);
+    color: white;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+  }
+  tr:last-child td { border-bottom: 0; }
+  td.good { color: #2d5a32; font-weight: 700; }
+  .note {
+    margin: 10px 0 0;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  .statrow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .stat {
+    background: var(--navy);
+    color: white;
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .stat b {
+    display: block;
+    font-family: "Roboto Slab", Georgia, serif;
+    font-size: 28px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat span { font-size: 13px; line-height: 1.3; color: #d5deea; }
+
+  .refs { columns: 2; gap: 28px; font-size: 14.5px; line-height: 1.45; }
+  .refs h3 {
+    margin: 0 0 6px;
+    break-after: avoid;
+    font-family: "Roboto Slab", Georgia, serif;
+    font-size: 16px;
+    color: var(--navy);
+  }
+  .refs p { margin: 0 0 12px; }
+  .refs code {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 12.5px;
+    background: #eef2f7;
+    padding: 1px 4px;
+    border-radius: 4px;
+  }
+
+  .close {
+    padding: 0;
+    background: var(--navy);
+    color: white;
+  }
+  .close.active { display: flex; }
+  .close-inner {
+    margin: auto;
+    width: min(980px, 100%);
+    padding: 40px;
+  }
+  .close h1 { color: white; font-size: 56px; margin-bottom: 12px; }
+  .close .lede {
+    font-size: 22px;
+    line-height: 1.4;
+    max-width: 820px;
+    color: #e7eef6;
+    font-family: "Roboto Slab", Georgia, serif;
+  }
+  .close .meta { border-top-color: rgba(255,255,255,0.16); margin-top: 36px; }
+
+  #chrome {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 16px;
+    color: #c5d0dc;
+    font-size: 12px;
+    z-index: 5;
+  }
+  #bar {
+    flex: 1;
+    height: 3px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  #bar > i {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--blue), var(--gold));
+  }
+  button.nav {
+    background: transparent;
+    color: #d5deea;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    padding: 2px 8px;
+    cursor: pointer;
+    font: inherit;
+  }
+  button.nav:hover { background: rgba(255,255,255,0.08); }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+  @media print {
+    body { overflow: visible; background: white; }
+    #viewport { display: block; height: auto; }
+    #stage { transform: none !important; width: auto; height: auto; box-shadow: none; }
+    .slide, .title-slide, .close {
+      display: flex !important;
+      position: relative;
+      width: 1280px;
+      height: 720px;
+      page-break-after: always;
+      break-after: page;
+    }
+    #chrome, .hint { display: none; }
+  }
+</style>
+</head>
+<body>
+<div id="viewport">
+  <div id="stage">
+
+    <section class="slide title-slide active" data-title="Title">
+      <div class="title-rail"></div>
+      <div class="title-main">
+        <div class="eyebrow">CAAE02 · Final submission</div>
+        <div class="wordmark">
+          <span>CERTIFIED</span>
+          <span>AGENTIC AI</span>
+          <span class="accent">ENGINEER</span>
+        </div>
+        <div class="rule"></div>
+        <div class="project-kicker">Project title</div>
+        <h2 class="project-title">Resume Screening Agent<br />Evidence-grounded candidate triage</h2>
+        <div class="meta">
+          <div><small>Participant</small><strong>eswarkrishna</strong></div>
+          <div><small>Organisation</small><strong>CAAE02 Capstone</strong></div>
+          <div><small>Submission date</small><strong>26 September 2026</strong></div>
+        </div>
+      </div>
+      <div class="hint">Arrow keys or space to move · F for fullscreen</div>
+    </section>
+
+    <section class="slide" data-title="Agenda">
+      <div class="topbar"></div>
+      <div class="mast"><div class="brand">CERTIFIED AGENTIC AI ENGINEER</div><div class="slideno">02</div></div>
+      <h1>Agenda</h1>
+      <div class="body">
+        <nav class="agenda">
+          <a href="#3"><div class="num">01</div><span class="label">Problem and context</span></a>
+          <a href="#5"><div class="num">02</div><span class="label">Current process and pain points</span></a>
+          <a href="#4"><div class="num">03</div><span class="label">Project objectives</span></a>
+          <a href="#6"><div class="num">04</div><span class="label">Agentic workflow and system architecture</span></a>
+          <a href="#7"><div class="num">05</div><span class="label">Data, tools, and technology stack</span></a>
+          <a href="#8"><div class="num">06</div><span class="label">Implementation and demo</span></a>
+          <a href="#9"><div class="num">07</div><span class="label">Testing and validation</span></a>
+          <a href="#10"><div class="num">08</div><span class="label">Analysis and results</span></a>
+          <a href="#10"><div class="num">09</div><span class="label">Business impact</span></a>
+          <a href="#11"><div class="num">10</div><span class="label">Conclusion and future scope</span></a>
+          <a href="#12"><div class="num">11</div><span class="label">References</span></a>
+        </nav>
+      </div>
+      <div class="foot"><span>Resume Screening Agent</span><span>CAAE02 · Final submission</span></div>
+    </section>
+
+    <section class="slide" data-title="Problem">
+      <div class="topbar"></div>
+      <div class="mast"><div class="brand">CERTIFIED AGENTIC AI ENGINEER</div><div class="slideno">03</div></div>
+      <h1>Problem Statement and Context</h1>
+      <div class="body" style="display:flex; flex-direction:column; gap:12px;">
+        <div class="grid-3">
+          <article class="card blue">
+            <div class="kicker">Background</div>
+            <h3>First-pass screening is slow and uneven</h3>
+            <p>Recruiters read a resume against a job description and assign an informal fit. The same pair can be labelled differently by two reviewers, and obvious mismatches still consume the same reading time as close calls.</p>
+          </article>
+          <article class="card orange">
+            <div class="kicker">Current status</div>
+            <h3>Keyword filters miss real signal</h3>
+            <p>Applicant systems match strings. They miss synonyms, career switchers, and keyword-stuffed resumes, and they leave name, contact, and demographic text in the file the reviewer sees.</p>
+          </article>
+          <article class="card gold">
+            <div class="kicker">Why this topic</div>
+            <h3>Triage, with a person still deciding</h3>
+            <p>The useful agent is a consistent first label — Strong Match, Possible Fit, or Not Relevant — with evidence, a confidence score, and a stop for human review. It is a screening aid, and a recruiter decides who moves forward.</p>
+          </article>
+        </div>
+        <article class="card slate">
+          <div class="kicker">Design thinking</div>
+          <h3>From recruiter pain to a bounded agent</h3>
+          <div class="grid-5" style="margin-top:8px;">
+            <div><b>Empathize</b><p>Time is lost on clear mismatches, and names leak into judgment.</p></div>
+            <div><b>Define</b><p>Produce an evidence-backed label without PII, and pause when unsure.</p></div>
+            <div><b>Ideate</b><p>Parse and score as separate agents, with retrieval and fixed label rules.</p></div>
+            <div><b>Prototype</b><p>Streamlit Screen, Review, and Log on one LangGraph run.</p></div>
+            <div><b>Test</b><p>30 balanced pairs, with accuracy, false-positive, latency, and audit gates.</p></div>
+          </div>
+        </article>
+      </div>
+      <div class="foot"><span>Resume Screening Agent</span><span>CAAE02 · Final submission</span></div>
+    </section>
+
+    <section class="slide" data-title="Objectives">
+      <div class="topbar"></div>
+      <div class="mast"><div class="brand">CERTIFIED AGENTIC AI ENGINEER</div><div class="slideno">04</div></div>
+      <h1>Project Objectives</h1>
+      <div class="body" style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <article class="obj">
+          <div class="badge">1</div>
+          <div>
+            <h3>Build a grounded scorecard</h3>
+            <p>Ingest a resume PDF and a job description, parse them into typed profiles, retrieve same-family competency benchmarks, and score skills, experience, and education with quotes found in the resume.</p>
+          </div>
+        </article>
+        <article class="obj">
+          <div class="badge">2</div>
+          <div>
+            <h3>Route with a human checkpoint</h3>
+            <p>Auto-persist high-confidence Strong Match and Not Relevant. Pause Possible Fit and any case under 0.7 confidence so a recruiter can keep, upgrade, or downgrade the label.</p>
+          </div>
+        </article>
+        <article class="obj">
+          <div class="badge">3</div>
+          <div>
+            <h3>Keep PII out and audit every run</h3>
+            <p>Drop name, email, phone, gender, age, nationality, photo, and address before scoring. Write a SQLite tracking row for every run, including failures, and append recruiter decisions to an override log.</p>
+          </div>
+        </article>
+        <article class="obj">
+          <div class="badge">4</div>
+          <div>
+            <h3>Prove the loop on a fixed eval set</h3>
+            <p>Score 30 labelled pairs and clear the gates: accuracy at least 85%, false-positive rate at most 5%, p95 latency under 90 seconds, and an audit row for every case.</p>
+          </div>
+        </article>
+      </div>
+      <div class="foot"><span>Four outcomes: score, route, audit, measure</span><span>CAAE02 · Final submission</span></div>
+    </section>
+
+    <section class="slide" data-title="Current vs proposed">
+      <div class="topbar"></div>
+      <div class="mast"><div class="brand">CERTIFIED AGENTIC AI ENGINEER</div><div class="slideno">05</div></div>
+      <h1>Current Vs Proposed Approach</h1>
+      <div class="body grid-2">
+        <div class="panel now">
+          <h2 class="col-head">Current manual screening</h2>
+          <div class="step"><b>1</b><span>Recruiter opens a PDF and a job description side by side.</span></div>
+          <div class="step"><b>2</b><span>They scan for keywords, years, and degree, with the candidate’s name and contact still visible.</span></div>
+          <div class="step"><b>3</b><span>Fit is a private judgment. Synonyms and career changes are easy to miss, and stuffed keyword lists are easy to reward.</span></div>
+          <div class="step"><b>4</b><span>Notes live in email or a spreadsheet. A second reviewer cannot see why the first label was chosen.</span></div>
+          <div class="step"><b>5</b><span>Close calls and clear mismatches take the same kind of reading time.</span></div>
+        </div>
+        <div class="panel next">
+          <h2 class="col-head">Proposed agentic workflow</h2>
+          <div class="step"><b>1</b><span>Screen page accepts a resume PDF and a JD, or a demo fixture.</span></div>
+          <div class="step"><b>2</b><span>PyMuPDF extracts text. The parsing agent returns profiles and drops PII. The UI never shows a name.</span></div>
+          <div class="step"><b>3</b><span>Chroma returns competency chunks for that role family. The scoring agent rates three dimensions and grounds evidence in the resume.</span></div>
+          <div class="step"><b>4</b><span>Fixed rules set Strong Match, Possible Fit, or Not Relevant. Missing must-haves cannot become Strong Match.</span></div>
+          <div class="step"><b>5</b><span>High-confidence clear labels persist. Uncertain cases interrupt for Review. Every path writes an audit row.</span></div>
+        </div>
+      </div>
+      <div class="foot"><span>Pain point: inconsistent, unaudited, PII-visible reading</span><span>CAAE02 · Final submission</span></div>
+    </section>
+
+    <section class="slide arch" data-title="Architecture">
+      <div class="topbar"></div>
+      <div class="mast"><div class="brand">CERTIFIED AGENTIC AI ENGINEER</div><div class="slideno">06</div></div>
+      <h1>System Architecture</h1>
+      <p class="flow-name">Workflow: <strong>Resume Screening and Triage Agent</strong> — LangGraph <code style="font-family:Consolas,monospace;font-size:13px;">ingest → parse → retrieve → score → validate → persist or HITL</code></p>
+      <div class="body grid-5">
+        <article class="flow">
+          <div class="idx">1</div>
+          <h3>TRIGGER</h3>
+          <p>A recruiter starts a run from Streamlit: upload a resume PDF and paste or upload a JD, or click a demo fixture. <code style="font-family:Consolas,monospace;font-size:12px;">start_screening</code> opens a checkpointed thread.</p>
+        </article>
+        <article class="flow">
+          <div class="idx">2</div>
+          <h3>SENSE</h3>
+          <p>PyMuPDF reads the PDF. The JD is plain text. Retrieval pulls the top competency chunks for the parsed role family from the Chroma collection <em>competency_benchmarks</em>.</p>
+        </article>
+        <article class="flow">
+          <div class="idx">3</div>
+          <h3>REASON</h3>
+          <p>The parsing model emits a CandidateProfile and a RoleProfile. The scoring model rates skills, then experience, then education. Label rules, coverage, and confidence are applied in code.</p>
+        </article>
+        <article class="flow">
+          <div class="idx">4</div>
+          <h3>ACT</h3>
+          <p>The retriever is a LangChain tool. Structured output is validated with Pydantic. The graph inserts a tracking row, or interrupts and waits for <code style="font-family:Consolas,monospace;font-size:12px;">resume_review</code>.</p>
+        </article>
+        <article class="flow">
+          <div class="idx">5</div>
+          <h3>OBSERVE</h3>
+          <p>Strong Match or Not Relevant at confidence ≥ 0.7 auto-persists. Possible Fit or lower confidence stops for a person. Scores of 8 or more need resume-grounded evidence. Errors are still audited.</p>
+        </article>
+      </div>
+      <div class="pipe">
+        <span>ingest</span><i>→</i>
+        <span>parse</span><i>→</i>
+        <span>retrieve</span><i>→</i>
+        <span>score</span><i>→</i>
+        <span>validate</span><i>→</i>
+        <span class="split">persist auto</span>
+        <span class="split">human review</span>
+        <span class="split">persist error</span>
+      </div>
+      <div class="foot"><span>Checkpoints: data/checkpoints.db · Audit: data/tracking.db</span><span>CAAE02 · Final submission</span></div>
+    </section>
+
+    <section class="slide" data-title="Agentic workflow">
+      <div class="topbar"></div>
+      <div class="mast"><div class="brand">CERTIFIED AGENTIC AI ENGINEER</div><div class="slideno">07</div></div>
+      <h1>Agentic Workflow</h1>
+      <div class="body">
+        <div class="grid-2" style="gap:10px;">
+          <article class="phase">
+            <h3>Sense</h3>
+            <p>Resume PDF, job description, and 40 O*NET-inspired competency notes. Role families: engineering, product design, operations. Untrusted text is wrapped in resume and job-description delimiters before the model sees it.</p>
+          </article>
+          <article class="phase p2">
+            <h3>Reason and plan</h3>
+            <p>Two LLM steps with a fixed graph plan: parse, then retrieve, then score. The model proposes dimension scores and evidence. Code decides the label, so a missing must-have cannot be talked into Strong Match.</p>
+          </article>
+          <article class="phase p3">
+            <h3>Act</h3>
+            <p>Tool call into Chroma (top 5, same family). One retry if parsing fails validation. Persist the scorecard, or pause the thread. Recommended action is advance, hold, or reject.</p>
+          </article>
+          <article class="phase p4">
+            <h3>Observe and reflect</h3>
+            <p>Evidence quotes must appear in the resume text; thin evidence lowers confidence and adds recruiter questions. The Review page resumes the same thread after a browser refresh.</p>
+          </article>
+        </div>
+        <div class="chip-label">Agentic techniques used</div>
+        <div class="chips">
+          <span class="chip">LLM agent</span>
+          <span class="chip">Tool calling</span>
+          <span class="chip">RAG</span>
+          <span class="chip">Multi-agent</span>
+          <span class="chip">Planning</span>
+          <span class="chip">Memory</span>
+          <span class="chip">HITL</span>
+          <span class="chip off">RL — not used</span>
+        </div>
+      </div>
+      <div class="foot"><span>Stack detail is on this slide; the live path is Screen → Review → Log</span><span>CAAE02 · Final submission</span></div>
+    </section>
+
+    <section class="slide" data-title="Demo">
+      <div class="topbar"></div>
+      <div class="mast"><div class="brand">CERTIFIED AGENTIC AI ENGINEER</div><div class="slideno">08</div></div>
+      <h1>Implementation and Demo</h1>
+      <div class="body">
+        <div class="grid-3">
+          <article class="card blue page-card">
+            <div class="tag">Page 1</div>
+            <h3>Screen</h3>
+            <p>Upload a PDF and a JD. The page shows dimension scores, overall label, confidence, rationale, benchmark titles, and a recommended action. A Possible Fit or low-confidence result shows a review banner. The candidate name is omitted.</p>
+          </article>
+          <article class="card orange page-card">
+            <div class="tag">Page 2</div>
+            <h3>Review</h3>
+            <p>Pending HITL rows list the agent’s questions. The recruiter keeps, upgrades, or downgrades the label, adds notes, and submits. SQLite checkpoints keep the in-flight review across a refresh.</p>
+          </article>
+          <article class="card green page-card">
+            <div class="tag">Page 3</div>
+            <h3>Log</h3>
+            <p>Audit table with filters for label, role family, and overridden rows, plus CSV export. Filename is allowed. Demographic columns are absent.</p>
+          </article>
+        </div>
+        <div class="fixtures">
+          <div class="fix"><strong>Demo script</strong>Open Screen and run the three fixtures, then Review and Log. Custom PDFs need an OpenAI key. The fixtures replay recorded parse and score scripts.</div>
+          <div class="fix"><span class="dot g"></span><strong>eng-sm-01</strong>Strong Match. High confidence auto-persists.</div>
+          <div class="fix"><span class="dot a"></span><strong>eng-pf-01</strong>Possible Fit. Open Review, add notes, submit.</div>
+          <div class="fix"><span class="dot r"></span><strong>eng-nr-02</strong>Not Relevant. Confirm the log row, then export CSV.</div>
+        </div>
+      </div>
+      <div class="foot"><span>streamlit run app/streamlit_app.py · port 8501</span><span>CAAE02 · Final submission</span></div>
+    </section>
+
+    <section class="slide" data-title="Testing">
+      <div class="topbar"></div>
+      <div class="mast"><div class="brand">CERTIFIED AGENTIC AI ENGINEER</div><div class="slideno">09</div></div>
+      <h1>Testing and Validation</h1>
+      <div class="body">
+        <table>
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Current manual practice</th>
+              <th>With the agent</th>
+              <th>Recorded result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Time to a first label</td>
+              <td>Minutes of reading per resume</td>
+              <td>One parse-and-score graph run</td>
+              <td class="good">p95 7.6s (gate &lt; 90s)</td>
+            </tr>
+            <tr>
+              <td>Agreement with labelled pairs</td>
+              <td>Varies by reviewer</td>
+              <td>Harness on 30 balanced pairs</td>
+              <td class="good">Accuracy 86.7% (gate ≥ 85%)</td>
+            </tr>
+            <tr>
+              <td>Strong Match on a true Not Relevant</td>
+              <td>Keyword false positives</td>
+              <td>False-positive rate on Not Relevant</td>
+              <td class="good">0% (gate ≤ 5%)</td>
+            </tr>
+            <tr>
+              <td>Audit of every case</td>
+              <td>Ad hoc notes</td>
+              <td>SQLite row, including failures</td>
+              <td class="good">100% completeness</td>
+            </tr>
+            <tr>
+              <td>Uncertain cases</td>
+              <td>Informal judgment</td>
+              <td>Interrupt for recruiter review</td>
+              <td class="good">Possible Fit or confidence &lt; 0.7</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="note">The harness runs parse and score only. Recruiter overrides are a Review Queue metric, separate from accuracy. The set is 10 engineering, 10 product design, and 10 operations, crossed with 10 of each label, including synonym skills, keyword stuffing, a career switcher, an overqualified mismatch, and a missing degree with strong experience. Unit tests cover schemas, retrieval, both agents, the graph, and the UI with a fake model.</p>
+      </div>
+      <div class="foot"><span>python eval/run_eval.py · pytest</span><span>CAAE02 · Final submission</span></div>
+    </section>
+
+    <section class="slide" data-title="Results">
+      <div class="topbar"></div>
+      <div class="mast"><div class="brand">CERTIFIED AGENTIC AI ENGINEER</div><div class="slideno">10</div></div>
+      <h1>Analysis and Results</h1>
+      <div class="body">
+        <div class="statrow">
+          <div class="stat"><b>86.7%</b><span>Accuracy on 30 synthetic pairs. Gate was 85%.</span></div>
+          <div class="stat"><b>0%</b><span>False positives: no Not Relevant case labelled Strong Match.</span></div>
+          <div class="stat"><b>7.6s</b><span>p95 latency. Gate was under 90 seconds.</span></div>
+          <div class="stat"><b>100%</b><span>Audit completeness. Every harness case has a tracking row.</span></div>
+        </div>
+        <div class="grid-3">
+          <article class="card blue">
+            <h3>What the numbers say</h3>
+            <p>The label is stable enough to triage a balanced synthetic set, and it does not promote clear mismatches to Strong Match. Recruiter time shifts to Possible Fit and low-confidence rows.</p>
+          </article>
+          <article class="card orange">
+            <h3>Why the label holds</h3>
+            <p>Strong Match requires skills ≥ 8, experience ≥ 7, education met, and must-have coverage of at least half. Quotes that are absent from the resume are dropped, and a score of 8 or more without evidence is lowered.</p>
+          </article>
+          <article class="card slate">
+            <h3>What to treat carefully</h3>
+            <p>These figures are from the 30-pair synthetic set, not live applicants. The optional open-resume import uses weak overlap labels. Quote that set only after a person reviews the labels.</p>
+          </article>
+        </div>
+      </div>
+      <div class="foot"><span>Business impact: fewer full reads, a written reason for every label, PII kept off the score</span><span>CAAE02 · Final submission</span></div>
+    </section>
+
+    <section class="slide" data-title="Conclusions">
+      <div class="topbar"></div>
+      <div class="mast"><div class="brand">CERTIFIED AGENTIC AI ENGINEER</div><div class="slideno">11</div></div>
+      <h1>Suggestions and Conclusions</h1>
+      <div class="body grid-3">
+        <article class="card green">
+          <div class="kicker">Insights</div>
+          <h3>A bounded agent is the product</h3>
+          <ul>
+            <li>Separate parsing from scoring, and keep the final label in deterministic rules.</li>
+            <li>Stop the graph when the case is ambiguous, and show the questions the model could not answer.</li>
+            <li>Treat the scorecard as a triage aid. A person decides who advances.</li>
+          </ul>
+        </article>
+        <article class="card blue">
+          <div class="kicker">Next step</div>
+          <h3>Close the packaging gap</h3>
+          <ul>
+            <li>Run the Docker Compose smoke on a machine with Docker. The image already serves Streamlit on 8501 and ingests Chroma if the index is empty.</li>
+            <li>Re-run the harness after any prompt or model change, and keep the four gates as the release check.</li>
+            <li>Review open-set labels before using them in a reported accuracy.</li>
+          </ul>
+        </article>
+        <article class="card orange">
+          <div class="kicker">Future scope</div>
+          <h3>Calibrate, then connect</h3>
+          <ul>
+            <li>Use recruiter overrides as a calibration set for prompts and the confidence threshold.</li>
+            <li>Batch several resumes against one JD inside the same audit model.</li>
+            <li>ATS handoff, login, and interview decisions stay out of scope for this capstone.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="foot"><span>The recruiter remains the decision maker</span><span>CAAE02 · Final submission</span></div>
+    </section>
+
+    <section class="slide" data-title="Annexure">
+      <div class="topbar"></div>
+      <div class="mast"><div class="brand">CERTIFIED AGENTIC AI ENGINEER</div><div class="slideno">12</div></div>
+      <h1>Annexure</h1>
+      <div class="body refs">
+        <h3>Codebase</h3>
+        <p><code>src/resume_screener/</code> — schemas, parsing and scoring agents, Chroma retriever, LangGraph workflow, SQLite tracking.<br />
+        <code>app/streamlit_app.py</code> — Screen, Review, Log.<br />
+        <code>eval/run_eval.py</code> — accuracy, false-positive rate, latency, audit completeness.</p>
+        <h3>Datasets</h3>
+        <p>Primary: <code>data/eval/labels.json</code>, 30 authored resume PDFs and job descriptions.<br />
+        Knowledge: 40 markdown clusters in <code>data/competency_kb/</code>, chunked by heading into Chroma.<br />
+        Optional: LiveCareer resume PDFs, redacted on import, written to <code>data/eval/labels_open.json</code>. Those labels are weak.</p>
+        <h3>Technology</h3>
+        <p>Python 3.11, Pydantic, LangGraph with SQLite checkpoints, LangChain tool calling, OpenAI <code>gpt-4o</code> and <code>text-embedding-3-small</code>, Chroma, PyMuPDF, Streamlit, pytest. Claude Sonnet is optional for parsing when an Anthropic key is set.</p>
+        <h3>References</h3>
+        <p>LangGraph and LangChain documentation for the state graph, interrupts, and tools.<br />
+        Chroma for the persistent vector index.<br />
+        O*NET occupational content as the pattern for competency notes, rewritten as short project files.<br />
+        DeepEval faithfulness is recorded when installed and is not a release gate.</p>
+      </div>
+      <div class="foot"><span>Responsible use: PII stripped, HITL on uncertainty, full audit trail</span><span>CAAE02 · Final submission</span></div>
+    </section>
+
+    <section class="slide close" data-title="Close">
+      <div class="topbar"></div>
+      <div class="close-inner">
+        <div class="eyebrow">CAAE02 · Certified Agentic AI Engineer</div>
+        <h1>Thank you</h1>
+        <p class="lede">The scorecard is a triage aid. A person decides who moves forward.</p>
+        <div class="meta">
+          <div><small>Project</small><strong>Resume Screening Agent</strong></div>
+          <div><small>Participant</small><strong>eswarkrishna</strong></div>
+          <div><small>Ask me about</small><strong>HITL, label rules, eval gates</strong></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<div id="chrome">
+  <button class="nav" id="prev" type="button" aria-label="Previous slide">Prev</button>
+  <button class="nav" id="next" type="button" aria-label="Next slide">Next</button>
+  <div id="bar" aria-hidden="true"><i id="fill"></i></div>
+  <span id="counter">01 / 13</span>
+</div>
+
+<script>
+(function () {
+  const slides = Array.from(document.querySelectorAll("#stage .slide"));
+  const fill = document.getElementById("fill");
+  const counter = document.getElementById("counter");
+  let index = 0;
+
+  function fit() {
+    const stage = document.getElementById("stage");
+    const scale = Math.min(window.innerWidth / 1280, (window.innerHeight - 36) / 720);
+    stage.style.transform = "scale(" + scale + ")";
+  }
+
+  function show(n) {
+    index = (n + slides.length) % slides.length;
+    slides.forEach((slide, i) => slide.classList.toggle("active", i === index));
+    fill.style.width = ((index + 1) / slides.length * 100) + "%";
+    counter.textContent = String(index + 1).padStart(2, "0") + " / " + String(slides.length).padStart(2, "0");
+    if (location.hash !== "#" + (index + 1)) {
+      history.replaceState(null, "", "#" + (index + 1));
+    }
+  }
+
+  document.getElementById("next").addEventListener("click", () => show(index + 1));
+  document.getElementById("prev").addEventListener("click", () => show(index - 1));
+
+  document.addEventListener("keydown", (event) => {
+    const key = event.key;
+    if (["ArrowRight", "ArrowDown", "PageDown", " "].includes(key)) {
+      event.preventDefault();
+      show(index + 1);
+    } else if (["ArrowLeft", "ArrowUp", "PageUp", "Backspace"].includes(key)) {
+      event.preventDefault();
+      show(index - 1);
+    } else if (key === "Home") {
+      show(0);
+    } else if (key === "End") {
+      show(slides.length - 1);
+    } else if (key === "f" || key === "F") {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+      else document.exitFullscreen();
+    }
+  });
+
+  document.querySelectorAll(".agenda a").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      const n = Number(link.getAttribute("href").slice(1));
+      if (n) show(n - 1);
+    });
+  });
+
+  window.addEventListener("hashchange", () => {
+    const n = Number(location.hash.slice(1));
+    if (n >= 1 && n <= slides.length) show(n - 1);
+  });
+
+  window.addEventListener("resize", fit);
+  fit();
+  const start = Number(location.hash.slice(1));
+  show(start >= 1 && start <= slides.length ? start - 1 : 0);
+})();
+</script>
+</body>
+</html>

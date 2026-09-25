@@ -18,6 +18,7 @@ data/*.db
 data/checkpoints.db
 data/tracking.db
 data/overrides.jsonl
+data/external/
 eval/results/
 *.log
 .DS_Store

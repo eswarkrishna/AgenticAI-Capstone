@@ -1,0 +1,1202 @@
+[
+  {
+    "id": "lc-10186968",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/10186968.pdf",
+    "notes": "weak label: source category ADVOCATE is outside engineering; title 'CHILD FAMILY ADVOCATE'"
+  },
+  {
+    "id": "lc-10247517",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/10247517.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY MANAGER'; review before trusting"
+  },
+  {
+    "id": "lc-10265057",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/10265057.pdf",
+    "notes": "weak label: must-have overlap 2/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'WORKING RF SYSTEMS ENGINEER'; review before trusting"
+  },
+  {
+    "id": "lc-10395944",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/10395944.pdf",
+    "notes": "weak label: source category AVIATION is outside engineering; title 'LINE SERVICE TECHNICIAN'"
+  },
+  {
+    "id": "lc-10464113",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/10464113.pdf",
+    "notes": "weak label: source category SALES is outside engineering; title 'SALES EXECUTIVE'"
+  },
+  {
+    "id": "lc-10553553",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/10553553.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY MANAGER'; review before trusting"
+  },
+  {
+    "id": "lc-10734870",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/10734870.pdf",
+    "notes": "weak label: source category CONSTRUCTION is outside engineering; title 'CONSTRUCTION'"
+  },
+  {
+    "id": "lc-10839851",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/10839851.pdf",
+    "notes": "weak label: must-have overlap 0/4 vs eng-nr-01; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY SPECIALIST'; review before trusting"
+  },
+  {
+    "id": "lc-11197262",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-04.md",
+    "resume_pdf": "data/external/livecareer/resumes/11197262.pdf",
+    "notes": "weak label: source category AGRICULTURE is outside engineering; title 'PLANT PROTECTION AND QUARANTINE TECHNICIAN'"
+  },
+  {
+    "id": "lc-11580408",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/11580408.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY COORDINATOR'; review before trusting"
+  },
+  {
+    "id": "lc-11584809",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/11584809.pdf",
+    "notes": "weak label: must-have overlap 1/4 vs eng-nr-01; source category INFORMATION-TECHNOLOGY; title 'MANAGER - INFORMATION TECHNOLOGY AND BUILDING AUTOMATION SYSTEMS'; review before trusting"
+  },
+  {
+    "id": "lc-11773767",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/11773767.pdf",
+    "notes": "weak label: source category ADVOCATE is outside engineering; title 'BENEFIT ADVOCATE SUPERVISOR'"
+  },
+  {
+    "id": "lc-11797122",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/11797122.pdf",
+    "notes": "weak label: source category AUTOMOBILE is outside engineering; title 'AUTOMOBILE TRANSPORTER'"
+  },
+  {
+    "id": "lc-11919526",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/11919526.pdf",
+    "notes": "weak label: source category DESIGNER is outside engineering; title 'E-LEARNING DESIGNER'"
+  },
+  {
+    "id": "lc-11957080",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/11957080.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'LEAD INFORMATION TECHNOLOGY SUPPORT SPECIALIST'; review before trusting"
+  },
+  {
+    "id": "lc-12021752",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/12021752.pdf",
+    "notes": "weak label: source category BANKING is outside engineering; title 'SENIOR INVESTMENT BANKING SALES ANALYST'"
+  },
+  {
+    "id": "lc-12251115",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/12251115.pdf",
+    "notes": "weak label: source category CONSULTANT is outside engineering; title 'CONSULTANT'"
+  },
+  {
+    "id": "lc-12488356",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-04.md",
+    "resume_pdf": "data/external/livecareer/resumes/12488356.pdf",
+    "notes": "weak label: source category ENGINEERING is outside engineering; title 'SENIOR ENGINEERING PROGRAM MANAGER'"
+  },
+  {
+    "id": "lc-12763627",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/12763627.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'ASP.NET WEB DEVELOPER'; review before trusting"
+  },
+  {
+    "id": "lc-12820557",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/12820557.pdf",
+    "notes": "weak label: source category SALES is outside engineering; title 'SALES ASSOCIATE'"
+  },
+  {
+    "id": "lc-13264796",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-04.md",
+    "resume_pdf": "data/external/livecareer/resumes/13264796.pdf",
+    "notes": "weak label: source category ENGINEERING is outside engineering; title 'DIRECTOR OF ENGINEERING'"
+  },
+  {
+    "id": "lc-13385306",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/13385306.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'DIRECTOR OF INFORMATION TECHNOLOGY'; review before trusting"
+  },
+  {
+    "id": "lc-13477922",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/13477922.pdf",
+    "notes": "weak label: must-have overlap 0/4 vs eng-nr-01; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY SPECIALIST'; review before trusting"
+  },
+  {
+    "id": "lc-13565152",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/13565152.pdf",
+    "notes": "weak label: source category HEALTHCARE is outside engineering; title 'ACCOUNT EXECUTIVE'"
+  },
+  {
+    "id": "lc-13586069",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/13586069.pdf",
+    "notes": "weak label: source category CONSULTANT is outside engineering; title 'CONSULTANT'"
+  },
+  {
+    "id": "lc-13593241",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/13593241.pdf",
+    "notes": "weak label: source category ADVOCATE is outside engineering; title 'SCHOOL SUCCESS ADVOCATE'"
+  },
+  {
+    "id": "lc-13836471",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/13836471.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY MANAGER'; review before trusting"
+  },
+  {
+    "id": "lc-14789139",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/14789139.pdf",
+    "notes": "weak label: must-have overlap 2/4 vs eng-nr-03; source category INFORMATION-TECHNOLOGY; title 'DIRECTOR OF INFORMATION TECHNOLOGY'; review before trusting"
+  },
+  {
+    "id": "lc-15145575",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/15145575.pdf",
+    "notes": "weak label: source category BPO is outside engineering; title 'IT SUPPORT OFFICER'"
+  },
+  {
+    "id": "lc-15297298",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/15297298.pdf",
+    "notes": "weak label: must-have overlap 2/4 vs eng-nr-03; source category INFORMATION-TECHNOLOGY; title 'PRACTICE MANAGER'; review before trusting"
+  },
+  {
+    "id": "lc-15484097",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-04.md",
+    "resume_pdf": "data/external/livecareer/resumes/15484097.pdf",
+    "notes": "weak label: source category DIGITAL-MEDIA is outside engineering; title '25LIVE FUNCTIONAL ADMINISTRATOR/SUPERVISOR OF I.T. HELP DESK'"
+  },
+  {
+    "id": "lc-15603319",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/15603319.pdf",
+    "notes": "weak label: source category AGRICULTURE is outside engineering; title 'GRADUATE RESEARCH ASSISTANT'"
+  },
+  {
+    "id": "lc-15811992",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/15811992.pdf",
+    "notes": "weak label: source category BUSINESS-DEVELOPMENT is outside engineering; title 'BUSINESS DEVELOPMENT ASSOCIATE'"
+  },
+  {
+    "id": "lc-16820422",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/16820422.pdf",
+    "notes": "weak label: source category TEACHER is outside engineering; title 'ASSOCIATE TEACHER'"
+  },
+  {
+    "id": "lc-16887936",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/16887936.pdf",
+    "notes": "weak label: source category ARTS is outside engineering; title 'COORDINATOR, DONOR RELATIONS'"
+  },
+  {
+    "id": "lc-17111768",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-sm-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/17111768.pdf",
+    "notes": "weak label: must-have overlap 2/4 vs eng-sm-02; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY PROJECT MANAGER SYSTEM ANALYSIS (SYSANALSYS) [GS-2210-12]'; review before trusting"
+  },
+  {
+    "id": "lc-17412079",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/17412079.pdf",
+    "notes": "weak label: source category HR is outside engineering; title 'HR CONSULTING'"
+  },
+  {
+    "id": "lc-17510973",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/17510973.pdf",
+    "notes": "weak label: source category AUTOMOBILE is outside engineering; title 'CONTACT CENTER SPECIALIST'"
+  },
+  {
+    "id": "lc-17641670",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/17641670.pdf",
+    "notes": "weak label: must-have overlap 0/4 vs eng-nr-01; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY SPECIALIST'; review before trusting"
+  },
+  {
+    "id": "lc-17681064",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-sm-04.md",
+    "resume_pdf": "data/external/livecareer/resumes/17681064.pdf",
+    "notes": "weak label: must-have overlap 1/5 vs eng-sm-04; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY SENIOR MANAGER'; review before trusting"
+  },
+  {
+    "id": "lc-17688766",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/17688766.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'DIRECTOR OF INFORMATION TECHNOLOGY'; review before trusting"
+  },
+  {
+    "id": "lc-17730889",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/17730889.pdf",
+    "notes": "weak label: source category BUSINESS-DEVELOPMENT is outside engineering; title 'ASSISTANT TO BUSINESS DEVELOPMENT ADMINISTRATOR'"
+  },
+  {
+    "id": "lc-17876954",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/17876954.pdf",
+    "notes": "weak label: source category AVIATION is outside engineering; title 'AVIATION SUPPLY SPECIALIST'"
+  },
+  {
+    "id": "lc-17983957",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/17983957.pdf",
+    "notes": "weak label: source category CONSULTANT is outside engineering; title 'CONSULTANT'"
+  },
+  {
+    "id": "lc-18176523",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/18176523.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'SENIOR INFORMATION TECHNOLOGY MANAGER'; review before trusting"
+  },
+  {
+    "id": "lc-18301617",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/18301617.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY MANAGER'; review before trusting"
+  },
+  {
+    "id": "lc-18589927",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/18589927.pdf",
+    "notes": "weak label: source category BPO is outside engineering; title 'CUSTOMER SERVICES'"
+  },
+  {
+    "id": "lc-18752129",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-sm-04.md",
+    "resume_pdf": "data/external/livecareer/resumes/18752129.pdf",
+    "notes": "weak label: must-have overlap 1/5 vs eng-sm-04; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY ANALYST'; review before trusting"
+  },
+  {
+    "id": "lc-18900722",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/18900722.pdf",
+    "notes": "weak label: source category DIGITAL-MEDIA is outside engineering; title 'DIRECTOR OF NEW BUSINESS DEVELOPMENT'"
+  },
+  {
+    "id": "lc-19437318",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/19437318.pdf",
+    "notes": "weak label: source category BANKING is outside engineering; title 'LEAD TELLER'"
+  },
+  {
+    "id": "lc-19738730",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/19738730.pdf",
+    "notes": "weak label: source category BUSINESS-DEVELOPMENT is outside engineering; title 'BUSINESS DEVELOPMENT INTERN'"
+  },
+  {
+    "id": "lc-19796840",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/19796840.pdf",
+    "notes": "weak label: must-have overlap 2/4 vs eng-nr-03; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY AUDITOR'; review before trusting"
+  },
+  {
+    "id": "lc-19850482",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/19850482.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'SENIOR VP - INFORMATION TECHNOLOGY'; review before trusting"
+  },
+  {
+    "id": "lc-20082776",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/20082776.pdf",
+    "notes": "weak label: source category ACCOUNTANT is outside engineering; title 'SENIOR ACCOUNTANT'"
+  },
+  {
+    "id": "lc-20237244",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-sm-04.md",
+    "resume_pdf": "data/external/livecareer/resumes/20237244.pdf",
+    "notes": "weak label: must-have overlap 1/5 vs eng-sm-04; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY SPECIALIST'; review before trusting"
+  },
+  {
+    "id": "lc-20279756",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/20279756.pdf",
+    "notes": "weak label: source category FITNESS is outside engineering; title 'ADVOCARE DISTRIBUTOR'"
+  },
+  {
+    "id": "lc-20408458",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/20408458.pdf",
+    "notes": "weak label: must-have overlap 1/4 vs eng-nr-01; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY SUPPORT SPECIALISTNETWORK SPECIALIST PC TECHNICIAN IT CONSULTANT'; review before trusting"
+  },
+  {
+    "id": "lc-20674668",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/20674668.pdf",
+    "notes": "weak label: must-have overlap 2/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY SPECIALIST III (DRUPAL DEV)'; review before trusting"
+  },
+  {
+    "id": "lc-20698469",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/20698469.pdf",
+    "notes": "weak label: source category ARTS is outside engineering; title 'COMBAT MARKSMANSHIP TRAINER/ PRIMARY MARKSMANSHIP INSTRUCTOR'"
+  },
+  {
+    "id": "lc-21178545",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/21178545.pdf",
+    "notes": "weak label: source category FITNESS is outside engineering; title 'EMERGENCY DEPARTMENT PHYSICIAN'"
+  },
+  {
+    "id": "lc-21283365",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/21283365.pdf",
+    "notes": "weak label: must-have overlap 1/4 vs eng-nr-01; source category INFORMATION-TECHNOLOGY; title 'DIRECTOR OF INFORMATION TECHNOLOGY'; review before trusting"
+  },
+  {
+    "id": "lc-21386255",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/21386255.pdf",
+    "notes": "weak label: source category PUBLIC-RELATIONS is outside engineering; title 'DEVELOPMENT MANAGER'"
+  },
+  {
+    "id": "lc-21780877",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/21780877.pdf",
+    "notes": "weak label: must-have overlap 1/4 vs eng-nr-01; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY SPECIALIST GS11'; review before trusting"
+  },
+  {
+    "id": "lc-21782152",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/21782152.pdf",
+    "notes": "weak label: source category CONSTRUCTION is outside engineering; title 'PROJECT COORDINATOR \u00e2\u20ac\u201c CONSTRUCTION SIDE'"
+  },
+  {
+    "id": "lc-21807211",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/21807211.pdf",
+    "notes": "weak label: source category APPAREL is outside engineering; title 'APPAREL SALES ASSOCIATE/CASHIER'"
+  },
+  {
+    "id": "lc-21904897",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/21904897.pdf",
+    "notes": "weak label: source category CHEF is outside engineering; title 'CHEF'"
+  },
+  {
+    "id": "lc-22408666",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/22408666.pdf",
+    "notes": "weak label: source category TEACHER is outside engineering; title 'TEACHER'"
+  },
+  {
+    "id": "lc-22496394",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/22496394.pdf",
+    "notes": "weak label: source category DESIGNER is outside engineering; title 'CAD DESIGNER'"
+  },
+  {
+    "id": "lc-22622351",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/22622351.pdf",
+    "notes": "weak label: source category FINANCE is outside engineering; title 'FINANCE DIRECTOR'"
+  },
+  {
+    "id": "lc-22650051",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/22650051.pdf",
+    "notes": "weak label: source category AVIATION is outside engineering; title 'CUSTOMER SERVICE REP'"
+  },
+  {
+    "id": "lc-22776912",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/22776912.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'DIRECTOR OF INFORMATION TECHNOLOGY /CHIEF TECHNOLOGY OFFICER'; review before trusting"
+  },
+  {
+    "id": "lc-23009962",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/23009962.pdf",
+    "notes": "weak label: source category AUTOMOBILE is outside engineering; title 'ORGANIZATION DEVELOPMENT CONSULTANT'"
+  },
+  {
+    "id": "lc-23591247",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/23591247.pdf",
+    "notes": "weak label: source category CHEF is outside engineering; title 'CHEF'"
+  },
+  {
+    "id": "lc-23666211",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/23666211.pdf",
+    "notes": "weak label: must-have overlap 0/4 vs eng-nr-01; source category INFORMATION-TECHNOLOGY; title 'TRAINING MANAGER'; review before trusting"
+  },
+  {
+    "id": "lc-23864648",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/23864648.pdf",
+    "notes": "weak label: must-have overlap 1/4 vs eng-nr-01; source category INFORMATION-TECHNOLOGY; title 'VICE PRESIDENT INFORMATION TECHNOLOGY INFRASTRUCTURE OPERATIONS'; review before trusting"
+  },
+  {
+    "id": "lc-24230851",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/24230851.pdf",
+    "notes": "weak label: must-have overlap 0/4 vs eng-nr-01; source category INFORMATION-TECHNOLOGY; title 'CUSTOMER SERVICE REPRESENTATIVE'; review before trusting"
+  },
+  {
+    "id": "lc-24508725",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/24508725.pdf",
+    "notes": "weak label: source category HR is outside engineering; title 'FIELD HR ASSOCIATE'"
+  },
+  {
+    "id": "lc-24889109",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-sm-04.md",
+    "resume_pdf": "data/external/livecareer/resumes/24889109.pdf",
+    "notes": "weak label: must-have overlap 1/5 vs eng-sm-04; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY SPECIALIST'; review before trusting"
+  },
+  {
+    "id": "lc-24913648",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/24913648.pdf",
+    "notes": "weak label: must-have overlap 2/4 vs eng-nr-03; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY SPECIALIST'; review before trusting"
+  },
+  {
+    "id": "lc-25067742",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/25067742.pdf",
+    "notes": "weak label: source category ACCOUNTANT is outside engineering; title 'ACCOUNTANT'"
+  },
+  {
+    "id": "lc-25207620",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/25207620.pdf",
+    "notes": "weak label: must-have overlap 1/4 vs eng-nr-03; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY CERTIFIED TECHNICIAN'; review before trusting"
+  },
+  {
+    "id": "lc-25749150",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/25749150.pdf",
+    "notes": "weak label: source category ACCOUNTANT is outside engineering; title 'ACCOUNTANT'"
+  },
+  {
+    "id": "lc-25834360",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/25834360.pdf",
+    "notes": "weak label: source category HEALTHCARE is outside engineering; title 'FIELD NURSE'"
+  },
+  {
+    "id": "lc-25857360",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/25857360.pdf",
+    "notes": "weak label: must-have overlap 1/4 vs eng-nr-03; source category INFORMATION-TECHNOLOGY; title 'STAFF ASSISTANT'; review before trusting"
+  },
+  {
+    "id": "lc-25905275",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-sm-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/25905275.pdf",
+    "notes": "weak label: must-have overlap 1/4 vs eng-sm-02; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY SPECIALIST'; review before trusting"
+  },
+  {
+    "id": "lc-25959103",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/25959103.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'ADMINISTRATOR OF INFORMATION TECHNOLOGY'; review before trusting"
+  },
+  {
+    "id": "lc-26410763",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/26410763.pdf",
+    "notes": "weak label: source category ARTS is outside engineering; title 'GAME DESIGN INTERN'"
+  },
+  {
+    "id": "lc-26425074",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/26425074.pdf",
+    "notes": "weak label: source category SALES is outside engineering; title 'SALES ASSOCIATE'"
+  },
+  {
+    "id": "lc-26975573",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/26975573.pdf",
+    "notes": "weak label: source category ACCOUNTANT is outside engineering; title 'STAFF ACCOUNTANT'"
+  },
+  {
+    "id": "lc-27058381",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-sm-04.md",
+    "resume_pdf": "data/external/livecareer/resumes/27058381.pdf",
+    "notes": "weak label: must-have overlap 1/5 vs eng-sm-04; source category INFORMATION-TECHNOLOGY; title 'SYSTEM ADMINISTRATOR'; review before trusting"
+  },
+  {
+    "id": "lc-27080812",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/27080812.pdf",
+    "notes": "weak label: source category DIGITAL-MEDIA is outside engineering; title 'VICE-PRESIDENT DATA AND MARKETING TECHNOLOGY'"
+  },
+  {
+    "id": "lc-27120528",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/27120528.pdf",
+    "notes": "weak label: source category BANKING is outside engineering; title 'MORTGAGE BANKING DEFAULT OPERATIONS SPECIALIST II'"
+  },
+  {
+    "id": "lc-27372171",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/27372171.pdf",
+    "notes": "weak label: must-have overlap 2/4 vs eng-nr-03; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY SPECIALIST/SYSTEM ANALYSIS'; review before trusting"
+  },
+  {
+    "id": "lc-27485716",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/27485716.pdf",
+    "notes": "weak label: must-have overlap 1/4 vs eng-nr-01; source category INFORMATION-TECHNOLOGY; title 'CORPORATE PROJECT MANAGER'; review before trusting"
+  },
+  {
+    "id": "lc-27536013",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-sm-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/27536013.pdf",
+    "notes": "weak label: must-have overlap 2/4 vs eng-sm-02; source category INFORMATION-TECHNOLOGY; title 'EXPERIENCED INFORMATION TECHNOLOGY MANAGER'; review before trusting"
+  },
+  {
+    "id": "lc-27770859",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/27770859.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY ADMINISTRATOR'; review before trusting"
+  },
+  {
+    "id": "lc-28078163",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-sm-04.md",
+    "resume_pdf": "data/external/livecareer/resumes/28078163.pdf",
+    "notes": "weak label: must-have overlap 2/5 vs eng-sm-04; source category ENGINEERING; title 'SOFTWARE ENGINEERING MANAGER'; review before trusting"
+  },
+  {
+    "id": "lc-28247753",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/28247753.pdf",
+    "notes": "weak label: source category AGRICULTURE is outside engineering; title 'COMMITTEE MEMBER'"
+  },
+  {
+    "id": "lc-28320387",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/28320387.pdf",
+    "notes": "weak label: source category ENGINEERING is outside engineering; title 'ENGINEERING INTERN'"
+  },
+  {
+    "id": "lc-28762662",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-sm-04.md",
+    "resume_pdf": "data/external/livecareer/resumes/28762662.pdf",
+    "notes": "weak label: must-have overlap 2/5 vs eng-sm-04; source category ENGINEERING; title 'SOFTWARE ENGINEERING MANAGER'; review before trusting"
+  },
+  {
+    "id": "lc-29051656",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/29051656.pdf",
+    "notes": "weak label: must-have overlap 2/4 vs eng-nr-01; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY SPECIALIST'; review before trusting"
+  },
+  {
+    "id": "lc-29075857",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-sm-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/29075857.pdf",
+    "notes": "weak label: must-have overlap 2/4 vs eng-sm-02; source category INFORMATION-TECHNOLOGY; title 'ADJUNCT INSTRUCTOR'; review before trusting"
+  },
+  {
+    "id": "lc-29494962",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/29494962.pdf",
+    "notes": "weak label: source category FINANCE is outside engineering; title 'SECRETARY - FINANCE DIVISION'"
+  },
+  {
+    "id": "lc-30337969",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/30337969.pdf",
+    "notes": "weak label: source category CHEF is outside engineering; title 'OWNER, PERSONAL CHEF'"
+  },
+  {
+    "id": "lc-30344127",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/30344127.pdf",
+    "notes": "weak label: source category APPAREL is outside engineering; title 'SENIOR MATERIALS ANALYST'"
+  },
+  {
+    "id": "lc-30397268",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/30397268.pdf",
+    "notes": "weak label: source category CONSTRUCTION is outside engineering; title 'ADMINISTRATIVE ASSISTANT'"
+  },
+  {
+    "id": "lc-30430249",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/30430249.pdf",
+    "notes": "weak label: source category APPAREL is outside engineering; title 'SHIPPER-VAULT BULLION'"
+  },
+  {
+    "id": "lc-31042953",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/31042953.pdf",
+    "notes": "weak label: source category FITNESS is outside engineering; title 'MANAGER'"
+  },
+  {
+    "id": "lc-31111279",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/31111279.pdf",
+    "notes": "weak label: must-have overlap 2/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'MANAGER, INFORMATION TECHNOLOGY PROJECT MANAGEMENT OFFICE'; review before trusting"
+  },
+  {
+    "id": "lc-31242382",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/31242382.pdf",
+    "notes": "weak label: source category ADVOCATE is outside engineering; title 'CONSUMER SERVICES ADVOCATE'"
+  },
+  {
+    "id": "lc-31243710",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/31243710.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'IT MANAGER'; review before trusting"
+  },
+  {
+    "id": "lc-31677347",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-sm-04.md",
+    "resume_pdf": "data/external/livecareer/resumes/31677347.pdf",
+    "notes": "weak label: must-have overlap 2/5 vs eng-sm-04; source category ENGINEERING; title 'SOFTWARE ENGINEERING MANAGER'; review before trusting"
+  },
+  {
+    "id": "lc-32959732",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/32959732.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'SENIOR DIRECTOR, INFORMATION TECHNOLOGY'; review before trusting"
+  },
+  {
+    "id": "lc-32977530",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/32977530.pdf",
+    "notes": "weak label: source category HR is outside engineering; title 'HR CLERK'"
+  },
+  {
+    "id": "lc-32985311",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/32985311.pdf",
+    "notes": "weak label: must-have overlap 2/3 vs eng-nr-02; source category ENGINEERING; title 'SOFTWARE ENGINEERING ANALYST'; review before trusting"
+  },
+  {
+    "id": "lc-33241454",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/33241454.pdf",
+    "notes": "weak label: must-have overlap 0/4 vs eng-nr-01; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY SUPERVISOR'; review before trusting"
+  },
+  {
+    "id": "lc-33381211",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/33381211.pdf",
+    "notes": "weak label: must-have overlap 2/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'VICE PRESIDENT INFORMATION TECHNOLOGY - SOFTWARE ENGINEERING'; review before trusting"
+  },
+  {
+    "id": "lc-34712719",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/34712719.pdf",
+    "notes": "weak label: source category PUBLIC-RELATIONS is outside engineering; title 'WRITER'"
+  },
+  {
+    "id": "lc-35579812",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/35579812.pdf",
+    "notes": "weak label: source category HEALTHCARE is outside engineering; title 'DINING SERVICES COORDINATOR'"
+  },
+  {
+    "id": "lc-35990852",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/35990852.pdf",
+    "notes": "weak label: source category DESIGNER is outside engineering; title 'WEBSITE DESIGNER'"
+  },
+  {
+    "id": "lc-36206485",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/36206485.pdf",
+    "notes": "weak label: source category TEACHER is outside engineering; title 'TEACHER'"
+  },
+  {
+    "id": "lc-36434348",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/36434348.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY MANAGER'; review before trusting"
+  },
+  {
+    "id": "lc-36856210",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/36856210.pdf",
+    "notes": "weak label: must-have overlap 0/4 vs eng-nr-01; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY'; review before trusting"
+  },
+  {
+    "id": "lc-37242217",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/37242217.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY CONSULTANT'; review before trusting"
+  },
+  {
+    "id": "lc-37764298",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/37764298.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY CONSULTANT'; review before trusting"
+  },
+  {
+    "id": "lc-38753827",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/38753827.pdf",
+    "notes": "weak label: must-have overlap 1/4 vs eng-nr-03; source category INFORMATION-TECHNOLOGY; title 'VICE PRESIDENT, INFORMATION TECHNOLOGY'; review before trusting"
+  },
+  {
+    "id": "lc-39413067",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/39413067.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'FREELANCE IT CONSULTANT'; review before trusting"
+  },
+  {
+    "id": "lc-39718499",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/39718499.pdf",
+    "notes": "weak label: must-have overlap 0/4 vs eng-nr-01; source category INFORMATION-TECHNOLOGY; title 'ASSISTANT FOOTBALL COACH'; review before trusting"
+  },
+  {
+    "id": "lc-40018190",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-sm-04.md",
+    "resume_pdf": "data/external/livecareer/resumes/40018190.pdf",
+    "notes": "weak label: must-have overlap 1/5 vs eng-sm-04; source category INFORMATION-TECHNOLOGY; title 'IT SUPPORT TECHNICIAN'; review before trusting"
+  },
+  {
+    "id": "lc-41590605",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/41590605.pdf",
+    "notes": "weak label: source category PUBLIC-RELATIONS is outside engineering; title 'UNIT PUBLICIST'"
+  },
+  {
+    "id": "lc-46260230",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/46260230.pdf",
+    "notes": "weak label: must-have overlap 1/4 vs eng-nr-01; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY SPECIALIST(DISCOUNTPCFIX)'; review before trusting"
+  },
+  {
+    "id": "lc-48037995",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/48037995.pdf",
+    "notes": "weak label: must-have overlap 0/4 vs eng-nr-01; source category INFORMATION-TECHNOLOGY; title 'STAFF PHARMACIST'; review before trusting"
+  },
+  {
+    "id": "lc-51588273",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/51588273.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category ENGINEERING; title 'SOFTWARE ENGINEERING MANAGER'; review before trusting"
+  },
+  {
+    "id": "lc-51639418",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/51639418.pdf",
+    "notes": "weak label: must-have overlap 2/4 vs eng-nr-03; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY BUREAU DEPUTY DIRECTOR'; review before trusting"
+  },
+  {
+    "id": "lc-57002858",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/57002858.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY MANAGER'; review before trusting"
+  },
+  {
+    "id": "lc-58208591",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/58208591.pdf",
+    "notes": "weak label: source category APPAREL is outside engineering; title 'CUSTOMER SERVICE MANAGER'"
+  },
+  {
+    "id": "lc-63989974",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/63989974.pdf",
+    "notes": "weak label: source category AUTOMOBILE is outside engineering; title 'IT MANAGER'"
+  },
+  {
+    "id": "lc-64468610",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-sm-04.md",
+    "resume_pdf": "data/external/livecareer/resumes/64468610.pdf",
+    "notes": "weak label: must-have overlap 2/5 vs eng-sm-04; source category ENGINEERING; title 'SOFTWARE ENGINEERING MANAGER'; review before trusting"
+  },
+  {
+    "id": "lc-66832845",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-sm-04.md",
+    "resume_pdf": "data/external/livecareer/resumes/66832845.pdf",
+    "notes": "weak label: must-have overlap 1/5 vs eng-sm-04; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY SPECIALIST I'; review before trusting"
+  },
+  {
+    "id": "lc-68460556",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/68460556.pdf",
+    "notes": "weak label: must-have overlap 0/4 vs eng-nr-01; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY INTERN'; review before trusting"
+  },
+  {
+    "id": "lc-69360287",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/69360287.pdf",
+    "notes": "weak label: source category AGRICULTURE is outside engineering; title 'CUSTOMER SERVICE SPECIALIST III'"
+  },
+  {
+    "id": "lc-70089206",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/70089206.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY SPECIALIST'; review before trusting"
+  },
+  {
+    "id": "lc-79432080",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-pf-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/79432080.pdf",
+    "notes": "weak label: source category ARTS is outside engineering; title 'CREATIVE ASSISTANT'"
+  },
+  {
+    "id": "lc-79541391",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-sm-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/79541391.pdf",
+    "notes": "weak label: must-have overlap 2/4 vs eng-sm-02; source category INFORMATION-TECHNOLOGY; title 'SUBJECT MATTER EXPERT (INFORMATION TECHNOLOGY ASSISTANT)'; review before trusting"
+  },
+  {
+    "id": "lc-81761658",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/81761658.pdf",
+    "notes": "weak label: must-have overlap 1/4 vs eng-nr-01; source category INFORMATION-TECHNOLOGY; title 'IT MANAGER'; review before trusting"
+  },
+  {
+    "id": "lc-83816738",
+    "role_family": "engineering",
+    "label": "strong_match",
+    "jd_path": "data/eval/jds/eng-pf-01.md",
+    "resume_pdf": "data/external/livecareer/resumes/83816738.pdf",
+    "notes": "weak label: must-have overlap 3/4 vs eng-pf-01; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY INTERN (TEST AUTOMATION ENGINEER)'; review before trusting"
+  },
+  {
+    "id": "lc-89512321",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-04.md",
+    "resume_pdf": "data/external/livecareer/resumes/89512321.pdf",
+    "notes": "weak label: source category BPO is outside engineering; title 'SENIOR MANAGER'"
+  },
+  {
+    "id": "lc-90867631",
+    "role_family": "engineering",
+    "label": "possible_fit",
+    "jd_path": "data/eval/jds/eng-nr-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/90867631.pdf",
+    "notes": "weak label: must-have overlap 1/3 vs eng-nr-02; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY SPECIALIST'; review before trusting"
+  },
+  {
+    "id": "lc-91635250",
+    "role_family": "engineering",
+    "label": "strong_match",
+    "jd_path": "data/eval/jds/eng-nr-03.md",
+    "resume_pdf": "data/external/livecareer/resumes/91635250.pdf",
+    "notes": "weak label: must-have overlap 3/4 vs eng-nr-03; source category INFORMATION-TECHNOLOGY; title 'INFORMATION TECHNOLOGY'; review before trusting"
+  },
+  {
+    "id": "lc-92524964",
+    "role_family": "engineering",
+    "label": "not_relevant",
+    "jd_path": "data/eval/jds/eng-sm-02.md",
+    "resume_pdf": "data/external/livecareer/resumes/92524964.pdf",
+    "notes": "weak label: source category FINANCE is outside engineering; title 'FINANCE MANAGER'"
+  }
+]
