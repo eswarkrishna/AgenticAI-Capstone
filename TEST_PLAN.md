@@ -111,11 +111,11 @@ Phase 4 proves wiring. Label accuracy is **not** gated here; that is Phase 7.
 
 | ID | Type | Check | Pass |
 |---|---|---|---|
-| P7-01 | Eval | Harness completes on all 30 pairs and prints accuracy, FPR, p50/p95, audit completeness | [ ] |
-| P7-02 | Eval | Accuracy >= 85% and FPR <= 5% (tune prompt/threshold in this phase if missed) | [ ] |
-| P7-03 | Eval | Time-to-scorecard p95 < 90s | [ ] |
+| P7-01 | Eval | Harness completes on all 30 pairs and prints accuracy, FPR, p50/p95, audit completeness | [x] |
+| P7-02 | Eval | Accuracy >= 85% and FPR <= 5% (tune prompt/threshold in this phase if missed) | [x] |
+| P7-03 | Eval | Time-to-scorecard p95 < 90s | [x] |
 | P7-04 | Smoke | `docker compose up` serves Streamlit on 8501 | [ ] |
-| P7-05 | Doc | README is enough for a third party to run the demo with only an OpenAI key | [ ] |
+| P7-05 | Doc | README is enough for a third party to run the demo with only an OpenAI key | [x] |
 
 ---
 

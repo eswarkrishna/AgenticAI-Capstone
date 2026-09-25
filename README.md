@@ -74,3 +74,45 @@ python -m resume_screener.rag.ingest
 This creates `data/chroma/`. With `OPENAI_API_KEY` set, embeddings use `EMBEDDING_MODEL` (default `text-embedding-3-small`). Without a key, or with `RESUME_SCREENER_EMBEDDINGS=local`, ingest uses a deterministic token-hash embedding suitable for smoke tests.
 
 A smoke query for `backend software engineer` should return at least one chunk.
+
+Rebuild the index after changing `OPENAI_API_KEY` or `EMBEDDING_MODEL`. Chroma stores one vector size per collection. A local ingest is 64 dimensions; `text-embedding-3-small` is 1536. Mixing them fails retrieval with a dimension error.
+
+## Evaluation (Phase 7)
+
+`python eval/run_eval.py` scores every pair in `data/eval/labels.json`. Each case runs parse and score only. The predicted label is `scorecard.overall_label`. The harness does not resume human review, so recruiter overrides are not applied.
+
+It prints accuracy, false-positive rate (ground-truth Not Relevant predicted Strong Match), latency p50/p95, and audit completeness, and writes `eval/results/report.json` plus `eval/results/report.md`.
+
+Targets: accuracy ≥ 85%, FPR ≤ 5%, p95 < 90s, and a tracking row for every case. DeepEval faithfulness is recorded when the package is installed; otherwise the report skips it. Recruiter override rate stays a manual Review Queue metric.
+
+## Demo script
+
+With or without `OPENAI_API_KEY`, open the Screen page and run these three fixtures:
+
+1. `eng-sm-01` — Strong Match (auto-persist when confidence is high).
+2. `eng-pf-01` — Possible Fit. Open Review, keep or change the label, add notes, and submit.
+3. `eng-nr-02` — Not Relevant.
+
+Then open Log, filter by label or role family, and export CSV. Candidate name is never shown.
+
+Custom PDF uploads need `OPENAI_API_KEY`.
+
+## Docker
+
+```bash
+docker compose up --build
+```
+
+Streamlit listens on port 8501. `./data` is mounted so tracking, checkpoints, and Chroma persist. If `data/chroma` is empty, the container ingests the competency KB on startup.
+
+## Limitations
+
+- Labels come from a 30-pair synthetic set, not live applicants.
+- Dimension scores use the model; the Strong Match / Possible Fit / Not Relevant label is then applied by fixed rules.
+- Embeddings and the index must be built with the same model.
+- DeepEval faithfulness is optional and is not a release gate.
+- No applicant-tracking-system integration, login, or interview decision.
+
+## Responsible use
+
+The parser drops name, email, phone, gender, age, nationality, photo, and address before scoring. Possible Fit and low-confidence Strong Match or Not Relevant stop for a recruiter. Every run writes a SQLite tracking row, and Review decisions append to `data/overrides.jsonl`. The scorecard is a triage aid. A person decides who moves forward.
