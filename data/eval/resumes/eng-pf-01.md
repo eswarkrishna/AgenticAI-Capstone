@@ -1,7 +1,7 @@
 # Chris Delgado
 
 ## Summary
-Backend engineer, 11 years, no degree. Self-taught. Led Python platform work and on-call for payments.
+Backend engineer, 11 years. Led Python platform work and on-call for payments.
 
 ## Skills
 Python, PostgreSQL, Redis, Kafka, gRPC, AWS
@@ -14,4 +14,4 @@ Owned ledger services. Mentored 4 engineers. Kafka outbox, gRPC internals, Postg
 Python APIs for logistics and billing clients.
 
 ## Education
-No formal degree. Completed community college CS courses; 11 years professional experience.
+Community college computer science coursework, 2012-2014. Did not complete a degree.

@@ -2,7 +2,7 @@
 role_family: operations
 source: O*NET-inspired public competency summary
 ## Typical skills
-TMS, carrier management, inbound/outbound, OTIF, exception handling, KPI reporting.
+TMS, carrier management, inbound/outbound, OTIF, exception handling, KPI reporting. Synonyms: OTIF for KPI reporting.
 ## Experience band
 5+ years for lead roles; coordinators may be 1-3 years WMS/receiving focused.
 ## Education

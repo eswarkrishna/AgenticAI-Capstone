@@ -9,7 +9,7 @@ from pathlib import Path
 from resume_screener.config import Settings
 from resume_screener.graph.workflow import resume_review, start_screening
 from resume_screener.schemas import MatchLabel, ScreeningResult
-from resume_screener.ui.demo import demo_case_id, scripted_llms
+from resume_screener.ui.demo import demo_case_id, demo_chunks, scripted_llms
 
 NO_KEY_MESSAGE = (
     "OPENAI_API_KEY is required for custom resumes. Without a key you can still "
@@ -38,6 +38,7 @@ def run_screening(
         parse_llm, score_llm = scripted_llms(case_id)
         kwargs["parse_llm"] = parse_llm
         kwargs["score_llm"] = score_llm
+        kwargs["chunks"] = demo_chunks(case_id)
     return start_screening(
         Path(resume_path),
         jd_text,

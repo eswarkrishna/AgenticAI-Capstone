@@ -8,7 +8,7 @@ UX writing, content strategy, voice and tone, Figma, editing
 
 ## Experience
 ### Content Designer, Atlas Travel (2021-2026)
-In-product copy. Observed usability tests; did not moderate or write discussion guides.
+In-product copy. Observed usability tests with the research team.
 
 ### Copywriter, agency (2019-2021)
 Web copy.

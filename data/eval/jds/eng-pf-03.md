@@ -17,6 +17,3 @@ role_family: engineering
 
 ## Education
 bachelor
-
-## Notes
-Uncommon stack: Temporal, NATS, Nix. Candidates may know adjacent tools (Airflow, Kafka, Bazel) without these names.

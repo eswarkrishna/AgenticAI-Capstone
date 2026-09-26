@@ -4,7 +4,7 @@
 Logistics lead, 7 years. 3PL multi-node network, TMS, and carrier scorecards.
 
 ## Skills
-TMS, carrier management, WMS, Lean, Excel, OTIF
+TMS, carrier management, inbound/outbound, WMS, Lean, Excel, OTIF
 
 ## Experience
 ### Logistics Operations Lead, Harbor 3PL (2019-2026)

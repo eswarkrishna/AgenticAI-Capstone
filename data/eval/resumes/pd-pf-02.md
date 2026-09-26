@@ -1,7 +1,7 @@
 # Sasha Idris
 
 ## Summary
-Visual designer, 5 years. Brand and marketing in Figma. Limited product UX process.
+Visual designer, 5 years. Brand and marketing design in Figma.
 
 ## Skills
 Figma, illustration, brand, typography, motion

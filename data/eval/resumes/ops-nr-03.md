@@ -1,7 +1,7 @@
 # Nina Costa
 
 ## Summary
-Brand designer, 6 years. Identity systems. No sourcing or contracts.
+Brand designer, 6 years. Identity systems and campaigns.
 
 ## Skills
 brand strategy, Figma, illustration, art direction

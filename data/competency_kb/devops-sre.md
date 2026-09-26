@@ -4,7 +4,7 @@ source: O*NET-inspired public competency summary
 ## Typical skills
 Kubernetes (k8s), containers, CI/CD, cloud (GCP, AWS, Azure), Terraform, Prometheus, incident response.
 ## Experience band
-5+ years operating production systems. Synonyms: k8s for Kubernetes, GCP for Google Cloud.
+5+ years operating production systems. Synonyms: k8s for Kubernetes, GCP for Google Cloud, Docker for containers, Prometheus for observability.
 ## Education
 Bachelor in CS or engineering common; operations experience weighted heavily.
 ## Related titles

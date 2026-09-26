@@ -1,7 +1,7 @@
 # Eden Laurent
 
 ## Summary
-Graphic designer, 6 years. Brand and print work. No software engineering jobs.
+Graphic designer, 6 years. Brand, print, and packaging.
 
 ## Skills
 Adobe Illustrator, InDesign, Photoshop, Figma, typography

@@ -180,15 +180,15 @@ CI/CD with Cloud Build; containerized legacy JVMs.""",
         ),
         "resume": resume(
             "Chris Delgado",
-            "Backend engineer, 11 years, no degree",
-            "Self-taught. Led Python platform work and on-call for payments.",
+            "Backend engineer, 11 years",
+            "Led Python platform work and on-call for payments.",
             ["Python", "PostgreSQL", "Redis", "Kafka", "gRPC", "AWS"],
             """### Staff Engineer, Tidepool Payments (2019-2026)
 Owned ledger services. Mentored 4 engineers. Kafka outbox, gRPC internals, PostgreSQL partitioning.
 
 ### Software Engineer, indie and contract (2014-2019)
 Python APIs for logistics and billing clients.""",
-            "No formal degree. Completed community college CS courses; 11 years professional experience.",
+            "Community college computer science coursework, 2012-2014. Did not complete a degree.",
         ),
     },
     {
@@ -229,15 +229,14 @@ Swift UI and SQLite local cache.""",
             ["WebAssembly", "eBPF"],
             "5+",
             "bachelor",
-            extra="Uncommon stack: Temporal, NATS, Nix. Candidates may know adjacent tools (Airflow, Kafka, Bazel) without these names.",
         ),
         "resume": resume(
             "Priya Raman",
             "Backend engineer, 6 years",
-            "Go services, Kafka, Bazel CI. Has not used Temporal, NATS, or Nix.",
+            "Go services, Kafka, and Bazel CI.",
             ["Go", "Kafka", "gRPC", "PostgreSQL", "Bazel", "Docker"],
             """### Backend Engineer, Meshline (2020-2026)
-Go microservices, Kafka event bus, Bazel monorepo. Explored workflow engines but production is cron plus Kafka.
+Go microservices, Kafka event bus, Bazel monorepo. Workflow jobs run as cron plus Kafka.
 
 ### Engineer, Blue Harbor (2018-2020)
 Go APIs and Docker deploys.""",
@@ -260,20 +259,20 @@ Go APIs and Docker deploys.""",
         ),
         "resume": resume(
             "Taylor Quinn",
-            "Career changer, 8 months bootcamp",
-            "Lists many tools with no production ownership or depth.",
+            "RapidCode bootcamp graduate",
+            "Finished the backend track and looking for a first engineering role.",
             [
                 "Python", "Java", "C++", "Go", "Rust", "Kubernetes", "Docker",
                 "AWS", "Azure", "GCP", "PostgreSQL", "MongoDB", "Redis",
                 "React", "Machine Learning", "Blockchain", "Agile", "Scrum",
             ],
             """### Student, RapidCode Bootcamp (2025-2026)
-Completed tutorial projects. No production on-call, no shipped backend at work.
+Backend track. Course labs covered a REST API tutorial and a Kubernetes deployment exercise.
 
 ### Barista, various cafes (2019-2025)
-Customer service. No software engineering role.""",
-            "Bootcamp certificate, 2026. No CS degree.",
-            extras="## Projects\nTodo app and copy-pasted Kubernetes YAML from a blog. Keyword list is not backed by job evidence.",
+Customer service, opening and closing, and cash handling.""",
+            "RapidCode Bootcamp certificate, 2026",
+            extras="## Projects\nPersonal todo app with React and a Python API. Deployed sample Kubernetes YAML from a course lab.",
         ),
     },
     {
@@ -292,7 +291,7 @@ Customer service. No software engineering role.""",
         "resume": resume(
             "Eden Laurent",
             "Graphic designer, 6 years",
-            "Brand and print work. No software engineering jobs.",
+            "Brand, print, and packaging.",
             ["Adobe Illustrator", "InDesign", "Photoshop", "Figma", "typography"],
             """### Graphic Designer, Studio North (2020-2026)
 Campaigns, packaging, and brand kits.
@@ -317,11 +316,11 @@ Print layout and photo retouching.""",
         ),
         "resume": resume(
             "Noah Patel",
-            "New graduate intern",
-            "One internship; coursework only.",
+            "Computer science student",
+            "SWE intern, summer 2025.",
             ["Python", "Java", "Git"],
             """### SWE Intern, Campus Labs (summer 2025)
-Bug fixes on an internal Python script. No on-call, no system design.
+Bug fixes on an internal Python script.
 
 ### Teaching assistant, intro CS (2024-2025)
 Graded assignments.""",
@@ -423,11 +422,11 @@ Interviews and synthesis for public-sector tools.""",
         ),
         "resume": resume(
             "Jamie Brooks",
-            "Backend engineer switching to PM",
-            "Eight years engineering. Led a squad informally; no full-time PM title.",
+            "Staff engineer, 8 years",
+            "Seeking product management roles. Wrote RFCs and joined customer calls for API design.",
             ["Python", "system design", "stakeholder communication", "prioritization", "writing RFCs"],
             """### Staff Engineer / tech lead, Helio (2019-2026)
-Wrote RFCs, prioritized backlog with a PM, ran customer calls for API design. Wants a PM seat.
+Wrote RFCs, prioritized the squad backlog with a product manager, and ran customer calls for API design.
 
 ### Software Engineer, Helio (2016-2019)
 Backend Python services.""",
@@ -450,7 +449,7 @@ Backend Python services.""",
         "resume": resume(
             "Sasha Idris",
             "Visual designer, 5 years",
-            "Brand and marketing in Figma. Limited product UX process.",
+            "Brand and marketing design in Figma.",
             ["Figma", "illustration", "brand", "typography", "motion"],
             """### Visual Designer, Ember Ads (2021-2026)
 Campaigns and landing pages in Figma. Occasional help on in-app empty states.
@@ -475,8 +474,8 @@ Logos and pitch decks.""",
         ),
         "resume": resume(
             "Drew Kim",
-            "APM, 2 years",
-            "Shipped small features; has not owned strategy or exec reviews.",
+            "Associate product manager, 2 years",
+            "Feature specs, acceptance criteria, and QA.",
             ["Jira", "user stories", "standups", "Figma specs", "Mixpanel basics"],
             """### Associate Product Manager, SproutCRM (2023-2026)
 Tickets, acceptance criteria, and QA. Shadowed senior PM on roadmap.
@@ -505,7 +504,7 @@ Requirements docs.""",
             "UX writing and content decks. Sat in on a few research sessions.",
             ["UX writing", "content strategy", "voice and tone", "Figma", "editing"],
             """### Content Designer, Atlas Travel (2021-2026)
-In-product copy. Observed usability tests; did not moderate or write discussion guides.
+In-product copy. Observed usability tests with the research team.
 
 ### Copywriter, agency (2019-2021)
 Web copy.""",
@@ -529,10 +528,10 @@ Web copy.""",
         "resume": resume(
             "Logan Barrett",
             "Backend engineer, 6 years",
-            "APIs and databases. Does not use Figma or run studies.",
+            "Java APIs, MySQL, and Kafka on AWS.",
             ["Java", "Spring", "MySQL", "Kafka", "AWS"],
             """### Backend Engineer, Payline (2020-2026)
-Java services. No design artifacts.
+Java services for payments and settlement.
 
 ### Engineer, municipal IT (2018-2020)
 Batch jobs.""",
@@ -555,7 +554,7 @@ Batch jobs.""",
         "resume": resume(
             "Morgan Ellis",
             "Account executive, 7 years",
-            "Quota-carrying sales. No PM or design roles.",
+            "Enterprise SaaS sales.",
             ["Salesforce", "negotiation", "prospecting", "MEDDIC", "Excel"],
             """### Account Executive, CloudStack (2019-2026)
 Enterprise SaaS sales, President's Club twice.
@@ -581,7 +580,7 @@ Outbound pipeline.""",
         "resume": resume(
             "Pat Reynolds",
             "Warehouse supervisor, 9 years",
-            "Shift leadership and safety. No research methods.",
+            "Shift leadership, inventory accuracy, and safety.",
             ["shift scheduling", "WMS", "forklift certified", "safety audits", "Excel"],
             """### Warehouse Supervisor, FastShip DC (2018-2026)
 Crew of 22. Inventory accuracy and OSHA checks.
@@ -635,7 +634,7 @@ Demand and supply plans for three categories.""",
             "Dana Whitaker",
             "Logistics lead, 7 years",
             "3PL multi-node network, TMS, and carrier scorecards.",
-            ["TMS", "carrier management", "WMS", "Lean", "Excel", "OTIF"],
+            ["TMS", "carrier management", "inbound/outbound", "WMS", "Lean", "Excel", "OTIF"],
             """### Logistics Operations Lead, Harbor 3PL (2019-2026)
 Inbound/outbound for 4 DCs. TMS routing. OTIF 97%. Lean daily huddles.
 
@@ -687,10 +686,10 @@ POs and invoice exceptions.""",
         "resume": resume(
             "Robin Shah",
             "Operations analyst, 4 years",
-            "Dashboards and kaizen support. Has not managed a team or P&L.",
+            "Cycle-time dashboards and kaizen support.",
             ["Excel", "SQL", "process mapping", "Power BI", "Lean basics"],
             """### Operations Analyst, MetroFulfill (2021-2026)
-Cycle-time dashboards. Facilitated two kaizen events. No direct reports.
+Cycle-time dashboards. Facilitated two kaizen events.
 
 ### Intern, MetroFulfill (2020)
 Time studies.""",
@@ -712,11 +711,11 @@ Time studies.""",
         ),
         "resume": resume(
             "Kim Alvarez",
-            "CS operations, 5 years",
-            "Ticket SLAs and workforce planning. No demand or inventory planning.",
+            "Customer success operations, 5 years",
+            "Ticket SLAs and workforce planning.",
             ["Zendesk", "workforce planning", "SLA", "Salesforce", "Excel"],
             """### Customer Success Ops, Nimbus SaaS (2020-2026)
-Staffing model for support. SLA reporting. No ERP or forecast work.
+Staffing model for support. SLA reporting.
 
 ### Support lead, Nimbus SaaS (2018-2020)
 Queue management.""",
@@ -739,14 +738,14 @@ Queue management.""",
         "resume": resume(
             "Captain Lee Grant (ret.)",
             "Army logistics officer, 8 years",
-            "Led 40 soldiers, convoy and supply accountability. No commercial WMS.",
+            "Led 40 soldiers. Convoy planning and supply accountability.",
             ["people leadership", "supply accountability", "safety", "planning", "Excel"],
             """### Logistics Officer, U.S. Army (2016-2024)
 Company logistics. Inventories, safety, and throughput under field conditions.
 
 ### Platoon leader (2014-2016)
 Team leadership.""",
-            "B.S. History, 2014. No SAP/WMS certification.",
+            "B.S. History, 2014",
         ),
     },
     # --- operations not_relevant (4) ---
@@ -765,15 +764,15 @@ Team leadership.""",
         ),
         "resume": resume(
             "Dr. Evelyn Marsh",
-            "VP of Engineering, 18 years, PhD",
-            "Executive engineering leadership. Overqualified and mismatched to coordinator work.",
+            "VP of Engineering, 18 years",
+            "Engineering leadership, org design, and platform architecture.",
             ["engineering leadership", "org design", "budgeting", "hiring", "architecture"],
             """### VP Engineering, Atlas Robotics (2018-2026)
-200-person org. Board reporting. No warehouse WMS work.
+200-person engineering organization. Board reporting, hiring, and architecture reviews.
 
 ### Director of Engineering, Atlas Robotics (2012-2018)
 Platform teams.""",
-            "Ph.D. Computer Science, 2008. Not seeking a coordinator role; profile is a seniority and domain mismatch.",
+            "Ph.D. Computer Science, 2008",
         ),
     },
     {
@@ -792,7 +791,7 @@ Platform teams.""",
         "resume": resume(
             "Jules Park",
             "Frontend engineer, 5 years",
-            "React apps. No logistics operations.",
+            "React and TypeScript storefronts.",
             ["React", "TypeScript", "CSS", "Jest", "Webpack"],
             """### Frontend Engineer, Shopwave (2020-2026)
 Storefront UI.
@@ -818,7 +817,7 @@ CSS and HTML.""",
         "resume": resume(
             "Nina Costa",
             "Brand designer, 6 years",
-            "Identity systems. No sourcing or contracts.",
+            "Identity systems and campaigns.",
             ["brand strategy", "Figma", "illustration", "art direction"],
             """### Brand Designer, Folio Studio (2019-2026)
 Identity and campaigns.
@@ -843,11 +842,11 @@ Social assets.""",
         ),
         "resume": resume(
             "Dr. Farid Nasser",
-            "Academic researcher, 10 years",
-            "Publications in materials science. No S&OP or ERP.",
+            "Research scientist, 10 years",
+            "Materials science experiments and publications.",
             ["MATLAB", "lab management", "grant writing", "publishing", "Python for analysis"],
             """### Research Scientist, University Lab (2016-2026)
-Experiments and papers. Supervised graduate students in a lab, not a DC.
+Experiments, papers, and graduate-student supervision.
 
 ### Postdoc (2014-2016)
 Materials characterization.""",
@@ -876,7 +875,7 @@ source: O*NET-inspired public competency summary
 ## Typical skills
 SQL, Python, Spark or similar compute, warehouse platforms (Snowflake, BigQuery, Redshift), orchestration (Airflow), data modeling, dbt.
 ## Experience band
-4+ years building reliable pipelines, SLAs, and quality checks. Senior roles add platform and cost control.
+4+ years building reliable pipelines, SLAs, and quality checks. Senior roles add platform and cost control. Synonyms: Snowflake for data warehousing; Spark for Apache Spark.
 ## Education
 Bachelor in CS, IS, or quantitative field typical.
 ## Related titles
@@ -900,7 +899,7 @@ source: O*NET-inspired public competency summary
 ## Typical skills
 Kubernetes (k8s), containers, CI/CD, cloud (GCP, AWS, Azure), Terraform, Prometheus, incident response.
 ## Experience band
-5+ years operating production systems. Synonyms: k8s for Kubernetes, GCP for Google Cloud.
+5+ years operating production systems. Synonyms: k8s for Kubernetes, GCP for Google Cloud, Docker for containers, Prometheus for observability.
 ## Education
 Bachelor in CS or engineering common; operations experience weighted heavily.
 ## Related titles
@@ -960,7 +959,7 @@ source: O*NET-inspired public competency summary
 ## Typical skills
 CPython, FastAPI or Django, typing, pytest, packaging, async IO, SQLAlchemy or similar.
 ## Experience band
-Used across backend, data, and automation roles. Depth shown by production services, not keyword lists.
+Used across backend, data, and automation roles. Depth is shown by production services, on-call, and shipped APIs.
 ## Education
 Not degree-specific.
 ## Related titles
@@ -1054,7 +1053,7 @@ UX designer, product designer, interaction designer.
 role_family: product_design
 source: O*NET-inspired public competency summary
 ## Typical skills
-Study design, usability testing, interviews, surveys, synthesis, recruiting, insight storytelling.
+Study design, usability testing, interviews, surveys, synthesis, recruiting, insight storytelling. Synonyms: interviews for qualitative research; thematic analysis for insight synthesis.
 ## Experience band
 3-6 years mixed methods. Observing studies is not the same as moderating and synthesizing.
 ## Education
@@ -1174,7 +1173,7 @@ Supply chain manager, planning manager, SIOP lead.
 role_family: operations
 source: O*NET-inspired public competency summary
 ## Typical skills
-TMS, carrier management, inbound/outbound, OTIF, exception handling, KPI reporting.
+TMS, carrier management, inbound/outbound, OTIF, exception handling, KPI reporting. Synonyms: OTIF for KPI reporting.
 ## Experience band
 5+ years for lead roles; coordinators may be 1-3 years WMS/receiving focused.
 ## Education
@@ -1200,7 +1199,7 @@ source: O*NET-inspired public competency summary
 ## Typical skills
 WMS, receiving, cycle counts, picking, safety, throughput, shift communication.
 ## Experience band
-Coordinator: 1-3 years. Supervisor: people leadership plus WMS. VP Engineering profiles are an overqualified mismatch.
+Coordinator: 1-3 years of receiving, cycle counts, and WMS data entry. Supervisor: people leadership plus WMS.
 ## Education
 High school to bachelor depending on level.
 ## Related titles
@@ -1212,7 +1211,7 @@ source: O*NET-inspired public competency summary
 ## Typical skills
 Team leadership, process improvement, budget, cross-site coordination, Lean/Six Sigma.
 ## Experience band
-6+ years with direct reports. Analyst-only backgrounds are possible fits, not automatic matches.
+6+ years including direct reports, budget, and cross-site coordination.
 ## Education
 Bachelor typical.
 ## Related titles
@@ -1332,7 +1331,7 @@ source: O*NET-inspired public competency summary
 ## Typical skills
 Accountability, people leadership, planning under constraint, safety. Civilian WMS/ERP and TMS often need translation.
 ## Experience band
-Possible fit for DC supervisor when leadership is strong; train on commercial systems.
+Leadership and supply accountability transfer to DC supervisor work. Commercial WMS and ERP are usually learned on the job.
 ## Education
 Degree plus service, or equivalent experience.
 ## Related titles

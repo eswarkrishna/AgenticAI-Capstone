@@ -60,6 +60,33 @@ def test_eval_source_files_exist_and_pdfs_extract():
         assert text.strip(), case.id
 
 
+LABEL_NARRATION = (
+    "keyword list is not backed",
+    "lists many tools with no production",
+    "overqualified and mismatched",
+    "not seeking a coordinator",
+    "no software engineering jobs",
+    "has not used temporal",
+    "does not use figma",
+    "no pm or design roles",
+    "no research methods",
+    "no logistics operations",
+    "no sourcing or contracts",
+    "no s&op or erp",
+    "candidates may know adjacent tools",
+)
+
+
+def test_resumes_and_jds_do_not_narrate_the_label():
+    """Hard cases must read like applications, not like the answer key."""
+    for case in load_eval_cases():
+        resume = resolve_eval_path(case.resume_pdf).with_suffix(".md").read_text(encoding="utf-8")
+        jd = resolve_eval_path(case.jd_path).read_text(encoding="utf-8")
+        blob = f"{resume}\n{jd}".lower()
+        for phrase in LABEL_NARRATION:
+            assert phrase not in blob, f"{case.id} contains {phrase!r}"
+
+
 def test_readme_documents_pdf_and_index_regen():
     from resume_screener.paths import REPO_ROOT
 

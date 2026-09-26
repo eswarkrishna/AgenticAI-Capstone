@@ -1,7 +1,7 @@
 # Drew Kim
 
 ## Summary
-APM, 2 years. Shipped small features; has not owned strategy or exec reviews.
+Associate product manager, 2 years. Feature specs, acceptance criteria, and QA.
 
 ## Skills
 Jira, user stories, standups, Figma specs, Mixpanel basics

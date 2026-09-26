@@ -1,20 +1,20 @@
 # Taylor Quinn
 
 ## Summary
-Career changer, 8 months bootcamp. Lists many tools with no production ownership or depth.
+RapidCode bootcamp graduate. Finished the backend track and looking for a first engineering role.
 
 ## Skills
 Python, Java, C++, Go, Rust, Kubernetes, Docker, AWS, Azure, GCP, PostgreSQL, MongoDB, Redis, React, Machine Learning, Blockchain, Agile, Scrum
 
 ## Experience
 ### Student, RapidCode Bootcamp (2025-2026)
-Completed tutorial projects. No production on-call, no shipped backend at work.
+Backend track. Course labs covered a REST API tutorial and a Kubernetes deployment exercise.
 
 ### Barista, various cafes (2019-2025)
-Customer service. No software engineering role.
+Customer service, opening and closing, and cash handling.
 
 ## Education
-Bootcamp certificate, 2026. No CS degree.
+RapidCode Bootcamp certificate, 2026
 
 ## Projects
-Todo app and copy-pasted Kubernetes YAML from a blog. Keyword list is not backed by job evidence.
+Personal todo app with React and a Python API. Deployed sample Kubernetes YAML from a course lab.

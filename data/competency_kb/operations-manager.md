@@ -4,7 +4,7 @@ source: O*NET-inspired public competency summary
 ## Typical skills
 Team leadership, process improvement, budget, cross-site coordination, Lean/Six Sigma.
 ## Experience band
-6+ years with direct reports. Analyst-only backgrounds are possible fits, not automatic matches.
+6+ years including direct reports, budget, and cross-site coordination.
 ## Education
 Bachelor typical.
 ## Related titles

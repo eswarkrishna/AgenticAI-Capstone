@@ -9,7 +9,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from resume_screener.eval.load import load_eval_cases, resolve_eval_path
-from resume_screener.schemas import EvalCase
+from resume_screener.schemas import EvalCase, RetrievedChunk, RoleFamily
 
 DEMO_CASE_IDS = ("eng-sm-01", "eng-pf-01", "eng-nr-02")
 
@@ -151,3 +151,21 @@ def demo_paths(case_id: str) -> tuple[Path, str]:
 
 def scripted_llms(case_id: str) -> tuple[ScriptedLLM, ScriptedLLM]:
     return ScriptedLLM([DEMO_PARSE[case_id]]), ScriptedLLM([DEMO_SCORE[case_id]])
+
+
+def demo_chunks(case_id: str) -> list[RetrievedChunk]:
+    """Benchmark hits for the no-key demo. Avoids the shared Chroma index."""
+    if case_id not in DEMO_PARSE:
+        raise KeyError(case_id)
+    return [
+        RetrievedChunk(
+            id="backend-software-engineer::typical-skills",
+            title="Backend Software Engineer / Typical skills",
+            text=(
+                "Backend Software Engineer. Typical skills: Python, REST APIs, "
+                "PostgreSQL, Docker. Synonyms: k8s for Kubernetes."
+            ),
+            role_family=RoleFamily.engineering,
+            score=0.9,
+        )
+    ]

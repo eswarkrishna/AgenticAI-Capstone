@@ -1,7 +1,7 @@
 # Captain Lee Grant (ret.)
 
 ## Summary
-Army logistics officer, 8 years. Led 40 soldiers, convoy and supply accountability. No commercial WMS.
+Army logistics officer, 8 years. Led 40 soldiers. Convoy planning and supply accountability.
 
 ## Skills
 people leadership, supply accountability, safety, planning, Excel
@@ -14,4 +14,4 @@ Company logistics. Inventories, safety, and throughput under field conditions.
 Team leadership.
 
 ## Education
-B.S. History, 2014. No SAP/WMS certification.
+B.S. History, 2014

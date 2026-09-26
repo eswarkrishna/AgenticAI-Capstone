@@ -1,7 +1,7 @@
 # Jules Park
 
 ## Summary
-Frontend engineer, 5 years. React apps. No logistics operations.
+Frontend engineer, 5 years. React and TypeScript storefronts.
 
 ## Skills
 React, TypeScript, CSS, Jest, Webpack

@@ -22,6 +22,7 @@ from resume_screener.eval.metrics import (
     percentile,
 )
 from resume_screener.graph.workflow import start_screening
+from resume_screener.eval.retrieval import evaluate_retrieval
 from resume_screener.paths import REPO_ROOT
 from resume_screener.schemas import EvalCase
 
@@ -133,6 +134,11 @@ def build_report(outcomes: list[CaseOutcome]) -> dict[str, Any]:
         "latency_p95_s": p95,
         "audit_completeness": audit,
         "confusion_matrix": confusion_matrix(pairs),
+        "retrieval": {
+            "available": False,
+            "hit_rate": None,
+            "note": "Filled by run_eval when a competency index is present.",
+        },
         "deepeval_faithfulness": faith,
         "recruiter_override_rate": {
             "computed": False,
@@ -184,6 +190,7 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"- Latency p50: {report['latency_p50_s']:.2f}s",
         f"- Latency p95: {report['latency_p95_s']:.2f}s (gate < 90s: {'pass' if gates['p95_lt_90s'] else 'fail'})",
         f"- Audit completeness: {report['audit_completeness']:.1%} ({'pass' if gates['audit_complete'] else 'fail'})",
+        f"- Retrieval hit rate (expected KB cluster in top-k): {_retrieval_line(report)}",
         f"- DeepEval faithfulness: {faith_line}",
         "- Recruiter override rate: manual, from the Review Queue (not computed here).",
         "",
@@ -206,6 +213,17 @@ def render_markdown(report: dict[str, Any]) -> str:
         )
     lines.append("")
     return "\n".join(lines)
+
+
+def _retrieval_line(report: dict[str, Any]) -> str:
+    retrieval = report.get("retrieval") or {}
+    rate = retrieval.get("hit_rate")
+    if isinstance(rate, (int, float)):
+        misses = retrieval.get("misses") or []
+        suffix = f"; misses: {', '.join(misses)}" if misses else ""
+        return f"{rate:.1%}{suffix}"
+    reason = retrieval.get("error") or retrieval.get("note") or "not run"
+    return f"skipped ({reason})"
 
 
 def format_stdout(report: dict[str, Any]) -> str:
@@ -249,6 +267,7 @@ def run_eval(
         for case in cases
     ]
     report = build_report(outcomes)
+    report["retrieval"] = evaluate_retrieval(settings, k=settings.top_k)
     (out_dir / "report.json").write_text(
         json.dumps(report, indent=2), encoding="utf-8"
     )

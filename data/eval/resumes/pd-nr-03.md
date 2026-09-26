@@ -1,7 +1,7 @@
 # Pat Reynolds
 
 ## Summary
-Warehouse supervisor, 9 years. Shift leadership and safety. No research methods.
+Warehouse supervisor, 9 years. Shift leadership, inventory accuracy, and safety.
 
 ## Skills
 shift scheduling, WMS, forklift certified, safety audits, Excel

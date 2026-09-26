@@ -3,7 +3,9 @@ from __future__ import annotations
 from resume_screener.agents.scoring_agent import (
     apply_decision,
     decide_label,
+    derive_confidence,
     must_have_coverage,
+    redact_resume_for_scoring,
     score_candidate,
 )
 from resume_screener.eval.load import load_eval_cases, resolve_eval_path
@@ -88,6 +90,149 @@ def test_k8s_alias_counts_as_kubernetes():
     candidate = _backend_candidate(skills=["k8s", "Docker", "GCP"])
     role = _backend_role(must_have_skills=["Kubernetes", "Docker"])
     assert must_have_coverage(candidate, role, []) == 1.0
+
+
+def test_short_skill_names_do_not_match_as_substrings():
+    candidate = _backend_candidate(skills=["MongoDB", "Django", "Redis", "JavaScript"])
+    role = _backend_role(must_have_skills=["Go", "R", "Java"])
+    assert must_have_coverage(candidate, role, []) == 0.0
+
+
+def test_half_coverage_is_not_most_must_haves():
+    label = decide_label(
+        skills_score=9,
+        experience_score=9,
+        education_ok=True,
+        coverage=0.5,
+        years=7,
+        min_years=5,
+    )
+    assert label is not MatchLabel.strong_match
+
+
+def test_apache_spark_matches_spark():
+    candidate = _backend_candidate(skills=["Spark", "Python", "SQL", "Snowflake"])
+    role = _backend_role(must_have_skills=["Apache Spark", "Python"])
+    assert must_have_coverage(candidate, role, []) == 1.0
+
+
+def test_retrieved_kb_file_supplies_synonyms():
+    candidate = _backend_candidate(skills=["Docker", "Prometheus"])
+    role = _backend_role(must_have_skills=["containers", "observability"])
+    assert must_have_coverage(candidate, role, []) == 0.0
+    chunk = RetrievedChunk(
+        id="devops-sre::education",
+        title="DevOps / Education",
+        text="Bachelor in CS or engineering common.",
+        role_family=RoleFamily.engineering,
+        score=0.4,
+    )
+    assert must_have_coverage(candidate, role, [chunk]) == 1.0
+
+
+def test_rag_synonym_line_counts_toward_coverage():
+    candidate = _backend_candidate(skills=["tf"])
+    role = _backend_role(must_have_skills=["Terraform"])
+    assert must_have_coverage(candidate, role, []) == 0.0
+    chunk = RetrievedChunk(
+        id="devops-sre::experience",
+        title="DevOps / Experience band",
+        text="Synonyms: tf for Terraform.",
+        role_family=RoleFamily.engineering,
+        score=0.8,
+    )
+    assert must_have_coverage(candidate, role, [chunk]) == 1.0
+
+
+def test_confidence_rises_with_margin_and_threshold_is_real():
+    clear = derive_confidence(
+        label=MatchLabel.strong_match,
+        skills_score=10,
+        experience_score=10,
+        education_ok=True,
+        coverage=1.0,
+        years=8,
+        min_years=5,
+        thin=False,
+        evidence_count=6,
+    )
+    borderline = derive_confidence(
+        label=MatchLabel.strong_match,
+        skills_score=8,
+        experience_score=7,
+        education_ok=True,
+        coverage=2 / 3,
+        years=5,
+        min_years=5,
+        thin=True,
+        evidence_count=3,
+    )
+    weak_negative = derive_confidence(
+        label=MatchLabel.not_relevant,
+        skills_score=3,
+        experience_score=4,
+        education_ok=True,
+        coverage=0.0,
+        years=1,
+        min_years=6,
+        thin=False,
+        evidence_count=2,
+    )
+    assert clear > borderline
+    assert clear >= 0.7
+    assert borderline < 0.7
+    assert weak_negative < 0.7
+
+
+def test_score_prompt_drops_name_email_and_phone():
+    resume = "\n".join(
+        [
+            "# Jordan Hale",
+            "jordan.hale@example.com",
+            "555-010-1234",
+            "https://linkedin.com/in/jordan",
+            "Senior Backend Engineer. Python, PostgreSQL, Docker.",
+        ]
+    )
+    redacted = redact_resume_for_scoring(resume)
+    assert "Jordan Hale" not in redacted
+    assert "jordan.hale@example.com" not in redacted
+    assert "555-010-1234" not in redacted
+    assert "linkedin.com" not in redacted
+    assert "Python" in redacted
+
+    llm = ScriptedLLM(
+        [
+            {
+                "skills": _dim(9, "Python", "PostgreSQL", "Docker"),
+                "experience": _dim(8, "Senior Backend Engineer"),
+                "education": _dim(5, "not stated"),
+                "rationale": "Backend skills are on the resume.",
+                "recruiter_questions": [],
+            }
+        ]
+    )
+    score_candidate(
+        _backend_candidate(),
+        _backend_role(),
+        resume,
+        llm=llm,
+        chunks=[
+            RetrievedChunk(
+                id="bench-1",
+                title="Backend",
+                text="Python PostgreSQL Docker",
+                role_family=RoleFamily.engineering,
+                score=0.9,
+            )
+        ],
+    )
+    blob = str(llm.calls[0])
+    assert "Jordan Hale" not in blob
+    assert "jordan.hale@example.com" not in blob
+    assert "555-010-1234" not in blob
+    assert "linkedin.com" not in blob
+    assert "Python" in blob
 
 
 def test_score_candidate_strong_possible_and_not_relevant_fixtures():

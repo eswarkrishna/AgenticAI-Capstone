@@ -24,7 +24,7 @@ streamlit run app/streamlit_app.py
 
 ## Scoring and RAG (Phase 4)
 
-`retrieve_competency_benchmarks(role_family, query)` returns same-family Chroma chunks and is also a LangChain tool. `score_candidate(candidate, role, resume_text)` retrieves benchmarks, scores skills → experience → education with resume-grounded evidence, then applies label rules (never Strong Match when must-haves are absent).
+`retrieve_competency_benchmarks(role_family, query)` returns same-family Chroma chunks and is also a LangChain tool. `score_candidate(candidate, role, resume_text)` drops the leading name line and contact details, retrieves benchmarks, and scores skills → experience → education with resume-grounded evidence. The label is then applied by fixed rules. A must-have counts only on an exact token, a static alias, or a synonym line in a retrieved chunk (`k8s equals Kubernetes`). Strong Match requires at least two-thirds of must-haves. Confidence is computed from how far the scores and coverage sit from those rules, so the 0.7 threshold changes which clear cases auto-persist.
 
 ## Graph, HITL, and audit (Phase 5)
 
@@ -40,7 +40,7 @@ Every run writes a SQLite `tracking` row (`data/tracking.db`). Recruiter decisio
 - **Review** — pending HITL rows with agent questions. Keep / upgrade / downgrade + notes, then `resume_review`. SQLite checkpoints survive a browser refresh.
 - **Log** — audit table with filters (label, role family, overridden) and CSV export. Filename is allowed; no demographic columns.
 
-Without `OPENAI_API_KEY`, the three demo fixtures (`eng-sm-01` Strong Match, `eng-pf-01` Possible Fit, `eng-nr-02` Not Relevant) still run using the same recorded parse/score scripts as the tests. Custom uploads need a key.
+Without `OPENAI_API_KEY`, the three demo fixtures (`eng-sm-01` Strong Match, `eng-pf-01` Possible Fit, `eng-nr-02` Not Relevant) still run using the same recorded parse/score scripts as the tests, plus a recorded benchmark chunk. They do not query Chroma. Custom uploads need a key.
 
 ```bash
 streamlit run app/streamlit_app.py
@@ -100,7 +100,7 @@ Rebuild the index after changing `OPENAI_API_KEY` or `EMBEDDING_MODEL`. Chroma s
 
 It prints accuracy, false-positive rate (ground-truth Not Relevant predicted Strong Match), latency p50/p95, and audit completeness, and writes `eval/results/report.json` plus `eval/results/report.md`.
 
-Targets: accuracy ≥ 85%, FPR ≤ 5%, p95 < 90s, and a tracking row for every case. DeepEval faithfulness is recorded when the package is installed; otherwise the report skips it. Recruiter override rate stays a manual Review Queue metric.
+Targets: accuracy ≥ 85%, FPR ≤ 5%, p95 < 90s, and a tracking row for every case. The report also records whether each JD retrieved its expected competency cluster in the top-k (`pytest tests/test_retrieval_eval.py` checks that against a local index). DeepEval faithfulness is recorded when the package is installed; otherwise the report skips it. Recruiter override rate stays a manual Review Queue metric.
 
 ## Demo script
 
@@ -124,12 +124,13 @@ Streamlit listens on port 8501. `./data` is mounted so tracking, checkpoints, an
 
 ## Limitations
 
-- Labels come from a 30-pair synthetic set, not live applicants.
-- Dimension scores use the model; the Strong Match / Possible Fit / Not Relevant label is then applied by fixed rules.
+- Labels come from a 30-pair synthetic set, not live applicants. Resumes are written as applications; the answer is only in `labels.json` notes.
+- Dimension scores use the model. The Strong Match / Possible Fit / Not Relevant label is then applied by fixed rules.
+- Confidence is a routing score from score margins, must-have coverage, and evidence density. It is not a calibrated probability.
 - Embeddings and the index must be built with the same model.
 - DeepEval faithfulness is optional and is not a release gate.
 - No applicant-tracking-system integration, login, or interview decision.
 
 ## Responsible use
 
-The parser drops name, email, phone, gender, age, nationality, photo, and address before scoring. Possible Fit and low-confidence Strong Match or Not Relevant stop for a recruiter. Every run writes a SQLite tracking row, and Review decisions append to `data/overrides.jsonl`. The scorecard is a triage aid. A person decides who moves forward.
+The parser drops name, email, phone, gender, age, nationality, photo, and address from the profile. The scorer also strips the leading name line, emails, phone numbers, and URLs from the resume text before that text is sent to the model. Possible Fit and low-confidence Strong Match or Not Relevant stop for a recruiter. Every run writes a SQLite tracking row, and Review decisions append to `data/overrides.jsonl`. The scorecard is a triage aid. A person decides who moves forward.

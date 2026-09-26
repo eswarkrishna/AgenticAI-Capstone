@@ -1,7 +1,7 @@
 # Morgan Ellis
 
 ## Summary
-Account executive, 7 years. Quota-carrying sales. No PM or design roles.
+Account executive, 7 years. Enterprise SaaS sales.
 
 ## Skills
 Salesforce, negotiation, prospecting, MEDDIC, Excel
