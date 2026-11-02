@@ -2,6 +2,10 @@
 
 AI-powered resume screening and candidate triage. Phase 1 is the typed shell and PDF extract. Phase 2 adds the labelled eval set and a retrievable competency index. Later phases add parsing, scoring, HITL, and the live recruiter workflow.
 
+## Personal portfolio (Neo)
+
+A static single-page portfolio for Neo lives in [`portfolio/`](portfolio/). See [`portfolio/README.md`](portfolio/README.md) for how to open it locally (no install beyond a simple HTTP server).
+
 ## Setup
 
 ```bash
